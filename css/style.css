@@ -1,0 +1,120 @@
+/*FONTS*/
+
+@font-face {
+    font-family: 'open_sans';
+    src: url('fonts/OpenSans-Regular-webfont.eot');
+    src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sans';
+    src: url('fonts/OpenSans-Bold-webfont.eot');
+    src: url('fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: bold;
+    font-style: bold;
+
+}
+
+@font-face {
+    font-family: 'open_sans';
+    src: url('fonts/OpenSans-Light-webfont.eot');
+    src: url('fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: lighter;
+    font-style: lighter;
+
+}
+
+*{
+font-family:'open_sans'!important;
+}
+html { height: 100% 
+}
+body { height: 100%; margin: 0px;
+}
+#googleMap { 
+    height: 100%;
+    width:100%;
+    -webkit-filter: blur(5px);
+    filter:blur(5px);
+}
+#ok{
+margin:3px;
+display:none;
+}
+
+
+#directbut {
+                                position: absolute;
+								z-index: 101;			
+								opacity:1;
+                                bottom:3.5%;
+                                left:98%;
+                                opacity:0.2;
+                                -webkit-transition: all 1s ease-in-out;
+
+}
+
+#directbut:hover {
+opacity:0.95;}
+
+#infopbut:hover {
+opacity:0.95;}
+#over   { 
+								position: absolute;
+								z-index: 99;			
+								opacity:1;
+								-webkit-transition: all 1s ease-in-out;
+                                text-align:center;
+		}
+
+#infop   { 
+								position: absolute;
+								z-index: 100;			
+								opacity:1;
+								-webkit-transition: all 1s ease-in-out;
+                                text-align:left;
+                                font-size:100%;
+                                opacity:0;
+                                display:none;
+                                left:0px!important;
+                                background-color:#fefefe;
+                                padding:1%;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+    
+.infout{
+    -webkit-transition: all 1s ease-in-out;
+opacity:1!important;
+    display:block;
+
+}		
+
+.btn-pink {
+  background-color: hsl(326, 100%, 41%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff199b", endColorstr="#d10076");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#ff199b), to(#d10076));
+  background-image: -moz-linear-gradient(top, #ff199b, #d10076);
+  background-image: -ms-linear-gradient(top, #ff199b, #d10076);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff199b), color-stop(100%, #d10076));
+  background-image: -webkit-linear-gradient(top, #ff199b, #d10076);
+  background-image: -o-linear-gradient(top, #ff199b, #d10076);
+  background-image: linear-gradient(#ff199b, #d10076);
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23);
+  -webkit-font-smoothing: antialiased;
+}

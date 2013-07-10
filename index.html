@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale = 1.0" />
+                                                            <!-- Style -->
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+                                                            <!-- Mapping and logic -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAue8HUBWPfP9K6blbupxpEYHCj98VnWi0&sensor=false"></script>
+</head>
+
+<body>
+<i id="directbut" class="icon-list" onclick="showDirections()"></i>
+<i id="infopbut" class="icon-chevron-right centerVertical" onclick="infoptoggle()"></i>
+<div id="over" class="centerHorizontal centerVertical">
+<input id="location" placeholder="Location" type="text" value="">
+<input id="distance" placeholder="Distance (km)" type="number" min=0 value="">
+<input type="button" id="subit" class=" btn-large btn-block btn-pink" value="Run" onclick="submit()">
+<input type="button" id="ok" class=" btn-small btn-danger" value="Ok" >
+</div>
+    <div id="infop" class="centerVertical">
+    <span id="prefix"></span><span id="routeDistance"></span>
+    <!--<input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
+    <input id="closeinfop" class="btn btn-block" type="button" value="Ok" onclick="infoptoggle()"></div>
+<div id="googleMap"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/midway.min.js"></script>
+<script>
+ function overtoggle() {
+ $('#googleMap').css({"-webkit-filter" : "blur(0)"})
+ $('#googleMap').css({"filter" : "blur()"})
+ $('#over').css({"opacity" : "0"})
+ setTimeout(function () {
+  $('#over').css({"display" : "none"})
+ }, 600);
+ 
+}</script>
+</body>
+</html>
