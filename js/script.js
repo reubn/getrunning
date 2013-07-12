@@ -104,14 +104,20 @@ function submit() {
       }
     else {
         $("#subit").val("Sorry. There's a problem!" );//+ status);
-        $("#subit").removeClass("btn-pink" );
+        $("#subit").removeClass("btn-whist" );
         $("#subit").addClass("btn-danger" );
         //$("#ok").css("display", "inline");
         setTimeout(function () {
             $('#subit').val("Run");
             $("#subit").removeClass("btn-danger" );
-            $("#subit").addClass("btn-pink" );
+            $("#subit").addClass("btn-whist" );
 }, 1000);
+        
+        
+        $(".overval").addClass("noval" );
+        setTimeout(function () {
+            $(".overval").removeClass("noval" );
+}, 1100);
       
       }
     });

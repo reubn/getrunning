@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: 'open_sans';
-    src: url('fonts/OpenSans-Regular-webfont.eot');
-    src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/OpenSans-Regular-webfont.woff') format('woff'),
-         url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
-         url('fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -14,11 +14,11 @@
 
 @font-face {
     font-family: 'open_sans';
-    src: url('fonts/OpenSans-Bold-webfont.eot');
-    src: url('fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/OpenSans-Bold-webfont.woff') format('woff'),
-         url('fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
-         url('fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    src: url('../fonts/OpenSans-Bold-webfont.eot');
+    src: url('../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
     font-weight: bold;
     font-style: bold;
 
@@ -26,11 +26,11 @@
 
 @font-face {
     font-family: 'open_sans';
-    src: url('fonts/OpenSans-Light-webfont.eot');
-    src: url('fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/OpenSans-Light-webfont.woff') format('woff'),
-         url('fonts/OpenSans-Light-webfont.ttf') format('truetype'),
-         url('fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    src: url('../fonts/OpenSans-Light-webfont.eot');
+    src: url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
     font-weight: lighter;
     font-style: lighter;
 
@@ -117,4 +117,34 @@ opacity:1!important;
   color: #fff !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23);
   -webkit-font-smoothing: antialiased;
+}
+
+
+.btn.btn-whist {
+  background-color: #8E44AD;
+}
+.btn.btn-whist:hover,
+.btn.btn-whist:focus,
+.btn-group:focus .btn.btn-whist.dropdown-toggle {
+  background-color: #9B59B6;
+}
+.btn.btn-danger:active,
+.btn-group.open .btn.btn-danger.dropdown-toggle,
+.btn.btn-danger.active {
+  background-color: #8E44AD;
+}
+
+.control-group.focus textarea, .control-group.focus input[type="text"], .control-group.focus input[type="password"], .control-group.focus input[type="datetime"], .control-group.focus input[type="datetime-local"], .control-group.focus input[type="date"], .control-group.focus input[type="month"], .control-group.focus input[type="time"], .control-group.focus input[type="week"], .control-group.focus input[type="number"], .control-group.focus input[type="email"], .control-group.focus input[type="url"], .control-group.focus input[type="search"], .control-group.focus input[type="tel"], .control-group.focus input[type="color"], .control-group.focus .uneditable-input, textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+    
+border-color: #8E44AD!important;
+}
+
+.noval{
+    border-color: #E74C3C!important;
+    
+}
+
+.btn-info {
+    margin:3px;
+    
 }
