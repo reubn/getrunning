@@ -102,7 +102,7 @@ function submit() {
       plotRoute();
     overtoggle();
       }
-    else {
+    else{
         $("#subit").val("Sorry. There's a problem!" );//+ status);
         $("#subit").removeClass("btn-whist" );
         $("#subit").addClass("btn-danger" );
@@ -243,7 +243,7 @@ function showDirections() {
   var steps = directionsDisplay.directions.routes[0].legs[0].steps;
   var uniqueSteps = [steps[0]]; //initialize to avoid steps[i-1] --> negative index
   var instructions = [];
-  var header = "<head><title>Directions</title><body>";
+  var header = "<head><style></style><title>Directions</title><body>";
   
   for (var i=1; i<steps.length; i++) {
     if (steps[i] != uniqueSteps[uniqueSteps.length-1]
