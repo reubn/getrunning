@@ -37,7 +37,6 @@ var markers = [];
 function infoptoggle(){
 $("#infop").toggleClass("infout");
 $('#infopbut').toggleClass("infopout");
-
 } 
 
 function initialize(lata, lona, usegeo) {
@@ -45,8 +44,12 @@ function initialize(lata, lona, usegeo) {
     document.getElementById("location").value=lata + " , " + lona;
     document.getElementById("location").placeholder="Your Current Location!";    
     }
-    
-  directionsDisplay = new google.maps.DirectionsRenderer({draggable:true});
+    var polylineOptions = new google.maps.Polyline({
+    strokeColor: 'rgba(142, 68, 173, 0.65)',
+    strokeOpacity: 0.65,
+    strokeWeight: 6
+    });
+  directionsDisplay = new google.maps.DirectionsRenderer({draggable:true, polylineOptions: polylineOptions});
   var mapProp = {
     center: new google.maps.LatLng(52.0500, -2.7167),
     zoom: 12,

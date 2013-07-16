@@ -88,7 +88,8 @@ opacity:0.95;}
                                 font-size:100%;
                                 opacity:0;
                                 display:none;
-                                left:0px!important;
+                                left:-10000px;
+                                
                                 background-color:#fefefe;
                                 padding:1%;
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -97,6 +98,7 @@ box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     
 .infout{
     -webkit-transition: all 1s ease-in-out;
+    left:0px!important;
 opacity:1!important;
     display:block;
 
