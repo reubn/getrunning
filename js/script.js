@@ -37,6 +37,7 @@ var markers = [];
 function infoptoggle(){
 $("#infop").toggleClass("infout");
 $('#infopbut').toggleClass("infopout");
+
 } 
 
 function initialize(lata, lona, usegeo) {
@@ -49,7 +50,7 @@ function initialize(lata, lona, usegeo) {
     strokeOpacity: 0.65,
     strokeWeight: 6
     });
-  directionsDisplay = new google.maps.DirectionsRenderer({draggable:true, polylineOptions: polylineOptions});
+  directionsDisplay = new google.maps.DirectionsRenderer({draggable:true});
   var mapProp = {
     center: new google.maps.LatLng(52.0500, -2.7167),
     zoom: 12,
