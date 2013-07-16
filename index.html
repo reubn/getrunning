@@ -2,11 +2,12 @@
 <html>
 <head>
 <meta name="viewport" content="initial-scale = 1.0" />
-                                                            <!-- Style -->
-<link href="css/style.css" rel="stylesheet" type="text/css">
+ <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css" />                                                               <!-- Style -->
+
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="css/flat-ui.css" rel="stylesheet" type="text/css">
-                                                            <!-- Mapping and logic -->
+<link href="css/flat-ui.css" rel="stylesheet" type="text/css">  
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!-- Mapping and logic -->
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAue8HUBWPfP9K6blbupxpEYHCj98VnWi0&sensor=false"></script>
 </head>
 
@@ -26,6 +27,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
 <script type="text/javascript" src="js/midway.min.js"></script>
 <script>
  function overtoggle() {
@@ -37,5 +39,44 @@
  }, 600);
  
 }</script>
+    
+    <script>
+  $(function() {
+    $( "#location" ).autocomplete({
+        open: function() {
+            $('#location').css('border-bottom-left-radius', "0px");
+            $('#location').css('border-bottom-right-radius', "0px");
+        },
+        close: function() {
+            $('#location').css('border-bottom-left-radius', "6px");
+            $('#location').css('border-bottom-right-radius', "6px");
+        },
+      source: function( request, response ) {
+        $.ajax({
+          url: "http://ws.geonames.org/searchJSON",
+          dataType: "jsonp",
+          search: function(){
+            //$ulForResults.empty();
+        },
+        
+          data: {
+            featureClass: "P",
+            style: "full",
+            maxRows: 5,
+            name_startsWith: request.term
+          },
+          success: function( data ) {
+            response( $.map( data.geonames, function( item ) {
+              return {
+                label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
+                value: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName
+              }
+            }));
+          }
+        });
+      }
+    });
+  });
+  </script>
 </body>
 </html>

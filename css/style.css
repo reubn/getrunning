@@ -42,6 +42,7 @@ font-family:'open_sans'!important;
 html { height: 100% 
 }
 body { height: 100%; margin: 0px;
+overflow-y:hidden;
 }
 #googleMap { 
     height: 100%;
@@ -95,7 +96,16 @@ opacity:0.95;}
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
+.ui-autocomplete {
+    width: 198px!important;
+    margin-top:-7px!important;
+    border-color: #8E44AD!important;
+    border-width: 2px!important;
+    border-top-style:hidden!important;
+    border-top-left-radius:0!important;
+    border-top-right-radius:0!important;
     
+}
 .infout{
     -webkit-transition: all 1s ease-in-out;
     left:0px!important;
