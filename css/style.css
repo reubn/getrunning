@@ -67,6 +67,20 @@ display:none;
 
 }
 
+#infopbut {
+                                position: absolute;
+								z-index: 101;
+                                text-align:center;
+                                vertical-align:middle;
+                                opacity:0.5;
+                                -webkit-transition: all 1s ease-in-out;
+                                background-color:#fff!important;
+                                -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+                                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+
 #directbut:hover {
 opacity:0.95;}
 
@@ -84,12 +98,12 @@ opacity:0.95;}
 								position: absolute;
 								z-index: 100;			
 								opacity:1;
-								-webkit-transition: all 1s ease-in-out;
+								-webkit-transition: all 0.5s ease-in-out;
                                 text-align:left;
                                 font-size:100%;
                                 opacity:0;
                                 display:none;
-                                left:-10000px;
+                                left:-1000px;
                                 
                                 background-color:#fefefe;
                                 padding:1%;
@@ -107,7 +121,6 @@ box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     
 }
 .infout{
-    -webkit-transition: all 1s ease-in-out;
     left:0px!important;
 opacity:1!important;
     display:block;

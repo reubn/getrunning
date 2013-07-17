@@ -1,4 +1,5 @@
 window.onload = function() {// Check to see if the browser supports the GeoLocation API.
+    $('#infopbut').css("display", "none"); 
 	if (navigator.geolocation) {
 		// Get the location
 		navigator.geolocation.getCurrentPosition(function(position) {
@@ -33,10 +34,13 @@ var smooth_bool; //has route been smoothed
 var mode; //mode of transportation, needed to correct international errors
 //var reason;
 var markers = [];
-
+$('#closeinfop').click(function() {
+   $('#infopbut').css("display", "inline"); 
+    
+});
 function infoptoggle(){
+    $('#infopbut').css("display", "none"); 
 $("#infop").toggleClass("infout");
-$('#infopbut').toggleClass("infopout");
 
 } 
 
