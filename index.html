@@ -1,13 +1,14 @@
- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<!--<html manifest="cache.appcache">-->
+    <html>
 <head>
 <meta name="viewport" content="initial-scale = 1.0" />
  <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css" />                                                               <!-- Style -->
-
+<title>GetRunning</title>
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/flat-ui.css" rel="stylesheet" type="text/css">  
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <!-- Mapping and logic -->
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<!-- Mapping and logic -->
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAue8HUBWPfP9K6blbupxpEYHCj98VnWi0&sensor=false"></script>
 </head>
 
@@ -15,8 +16,8 @@
 <i id="directbut" class="icon-list" onclick="showDirections()"></i>
 <i id="infopbut" class="icon-chevron-right centerVertical" onclick="infoptoggle()"></i>
 <div id="over" class="centerHorizontal centerVertical">
-<input id="location" class="overval" placeholder="Location" type="text" value="">
-<input id="distance" class="overval" placeholder="Distance (km)" type="number" min=0 value="">
+<input id="location" class="overval" placeholder="Location" type="text" value="Hereford">
+<input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1 value="5">
 <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run" onclick="submit()">
 </div>
     <div id="infop" class="centerVertical">
@@ -69,8 +70,8 @@
           success: function( data ) {
             response( $.map( data.geonames, function( item ) {
               return {
-                label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
-                value: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName
+                label: item.name + (item.adminName1 ? ", " + item.adminName1 : ""),
+                value: item.name + (item.adminName1 ? ", " + item.adminName1 : "")
               }
             }));
           }
