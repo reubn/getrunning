@@ -14,6 +14,7 @@
 
 <body>
 <i id="directbut" class="icon-list" onclick="showDirections()"></i>
+<i id="refreshbut" class="icon-repeat" onclick="refreshdir()"></i>
 <i id="infopbut" class="icon-chevron-right centerVertical" onclick="infoptoggle()"></i>
 <div id="over" class="centerHorizontal centerVertical">
 <input id="location" class="overval" placeholder="Location" type="text" value="Hereford">
@@ -40,8 +41,7 @@
  }, 600);
  
 }</script>
-    
-    <script>
+<script>
   $(function() {
       
     $( "#location" ).autocomplete({

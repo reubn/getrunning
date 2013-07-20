@@ -92,7 +92,10 @@ function initialize(lata, lona, usegeo) {
       
   });
 }
-
+function refreshdir() {
+submit();
+$("#infop").toggleClass("infout");
+}
 function submit() {
     var location=document.getElementById("location").value;
   //reason=[0, 0, 0, 0, 0, 0];
@@ -251,8 +254,8 @@ function showDirections() {
   var steps = directionsDisplay.directions.routes[0].legs[0].steps;
   var uniqueSteps = [steps[0]]; //initialize to avoid steps[i-1] --> negative index
   var instructions = [];
-  var header = "<head><style></style><title>Directions</title><body>";
-  
+  var header = 
+      '<head><link href="http://localhost/getrunning/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="http://localhost/getrunning/css/flat-ui.css" rel="stylesheet" type="text/css"><link href="http://localhost/getrunning/css/style.css" rel="stylesheet" type="text/css"><title>Directions</title><body>';  
   for (var i=1; i<steps.length; i++) {
     if (steps[i] != uniqueSteps[uniqueSteps.length-1]
         && steps[i].instructions.split(" ").length>2

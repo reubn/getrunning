@@ -67,20 +67,31 @@ display:none;
 
 }
 
+#refreshbut {
+                                position: absolute;
+								z-index: 101;			
+								opacity:1;
+                                bottom:3.5%;
+                                left:96%;
+                                opacity:0.2;
+                                -webkit-transition: all 1s ease-in-out;
+
+}
+
 #infopbut {
                                 position: absolute;
 								z-index: 101;
                                 text-align:center;
                                 vertical-align:middle;
-                                opacity:0.5;
-                                -webkit-transition: all 1s ease-in-out;
-                                background-color:#fff!important;
+                                opacity:0.7;
+                                /*-webkit-transition: all 1s ease-in-out;
                                 -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-                                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+                                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);*/
 
 }
 
-
+#refreshbut:hover {
+opacity:0.95;}
 #directbut:hover {
 opacity:0.95;}
 

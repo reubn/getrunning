@@ -177,8 +177,8 @@ you can use the generic selector below, but it's slower:
   filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
 }
 .dropdown-arrow-inverse {
-  border-bottom-color: #34495e !important;
-  border-top-color: #34495e !important;
+  border-bottom-color: #484746 !important;
+  border-top-color: #484746 !important;
 }
 .demo-headline {
   padding: 73px 0 110px;
@@ -391,7 +391,7 @@ you can use the generic selector below, but it's slower:
   -webkit-font-smoothing: antialiased;
 }
 .demo-browser-content {
-  background-color: #34495e;
+  background-color: #484746;
   overflow: hidden;
   padding: 21px 0 0 20px;
   -webkit-border-radius: 0 0 6px;
@@ -413,7 +413,7 @@ you can use the generic selector below, but it's slower:
   }
 }
 body {
-  color: #34495e;
+  color: #484746;
   font-family: "Lato", sans-serif;
   font-size: 14px;
   line-height: 1.231;
@@ -607,7 +607,7 @@ h6 {
   background-color: #cda70d;
 }
 .btn.btn-inverse {
-  background-color: #34495e;
+  background-color: #484746;
 }
 .btn.btn-inverse:hover,
 .btn.btn-inverse:focus,
@@ -695,10 +695,10 @@ h6 {
   border-left-width: 6px;
   border-right-width: 6px;
   border-top-width: 8px;
-  border-bottom-color: #34495e;
+  border-bottom-color: #484746;
   border-style: solid;
   border-bottom-style: none;
-  border-top-color: #34495e;
+  border-top-color: #484746;
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
   -o-transition: 0.25s;
@@ -774,7 +774,7 @@ h6 {
   content: "";
   border-style: solid;
   border-width: 0 9px 9px 9px;
-  border-color: transparent transparent #34495e transparent;
+  border-color: transparent transparent #484746 transparent;
   height: 0;
   position: absolute;
   left: 15px;
@@ -851,7 +851,7 @@ h6 {
   padding-left: 5px;
 }
 .navbar .nav ul li {
-  background-color: #34495e;
+  background-color: #484746;
   padding: 0 3px 3px;
   position: relative;
 }
@@ -888,7 +888,7 @@ h6 {
 .navbar .btn-navbar {
   background: none;
   border: none;
-  color: #34495e;
+  color: #484746;
   margin: 21px 15px 17px;
   text-shadow: none;
   -webkit-box-shadow: none;
@@ -930,7 +930,7 @@ h6 {
 
 }
 .navbar-inverse .navbar-inner {
-  background: #34495e;
+  background: #484746;
   filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
 }
 .navbar-inverse .brand {
@@ -1056,7 +1056,7 @@ h6 {
   margin-top: 7px;
 }
 .navbar .nav li.dropdown .dropdown-menu {
-  background-color: #34495e;
+  background-color: #484746;
   opacity: 0;
   padding: 0;
   visibility: hidden;
@@ -1065,7 +1065,7 @@ h6 {
   display: none;
 }
 .navbar .nav li.dropdown .dropdown-menu:after {
-  border-bottom-color: #34495e;
+  border-bottom-color: #484746;
 }
 .navbar .nav li.dropdown .dropdown-menu > li > a {
   border-radius: 3px;
@@ -1215,7 +1215,7 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   border: 2px solid #bdc3c7;
-  color: #34495e;
+  color: #484746;
   font-family: "Lato", sans-serif;
   font-size: 14px;
   padding: 8px 5px;
@@ -1604,7 +1604,7 @@ input[type="color"].flat:focus,
   border-radius: 6px;
 }
 .control-group input:focus + .input-icon {
-  color: #34495e;
+  color: #484746;
 }
 .control-group.huge > .input-icon {
   line-height: 49px;
@@ -1823,7 +1823,7 @@ textarea[class*="span"] {
 .tagsinput input {
   background: transparent;
   border: none;
-  color: #34495e;
+  color: #484746;
   font-family: "Lato", sans-serif;
   font-size: 14px;
   margin: 0px;
@@ -2011,7 +2011,7 @@ textarea[class*="span"] {
   float: left;
 }
 .pager {
-  background-color: #34495e;
+  background-color: #484746;
   border-radius: 6px;
   color: #ffffff;
   font-size: 16px;
@@ -2289,13 +2289,13 @@ textarea[class*="span"] {
   padding-bottom: 9px;
 }
 .tooltip.top .tooltip-arrow {
-  border-top-color: #34495e;
+  border-top-color: #484746;
   border-width: 9px 9px 0;
   bottom: 0;
   margin-left: -9px;
 }
 .tooltip.right .tooltip-arrow {
-  border-right-color: #34495e;
+  border-right-color: #484746;
   border-width: 9px 9px 9px 0;
   margin-top: -9px;
   left: -3px;
@@ -2304,19 +2304,19 @@ textarea[class*="span"] {
   padding-top: 8px;
 }
 .tooltip.bottom .tooltip-arrow {
-  border-bottom-color: #34495e;
+  border-bottom-color: #484746;
   border-width: 0 9px 9px;
   margin-left: -9px;
   top: -1px;
 }
 .tooltip.left .tooltip-arrow {
-  border-left-color: #34495e;
+  border-left-color: #484746;
   border-width: 9px 0 9px 9px;
   margin-top: -9px;
   right: -3px;
 }
 .tooltip-inner {
-  background-color: #34495e;
+  background-color: #484746;
   line-height: 17.99px;
   padding: 12px 12px;
   text-align: center;
@@ -2442,7 +2442,7 @@ textarea[class*="span"] {
 }
 .navbar-fixed-bottom .nav > li > ul:before {
   border-bottom: none;
-  border-top: 9px outset #34495e;
+  border-top: 9px outset #484746;
   bottom: 4px;
   top: auto;
 }
@@ -2453,7 +2453,7 @@ textarea[class*="span"] {
   margin-bottom: 10px;
 }
 .open.dropup > .dropdown-arrow.dropdown-arrow-inverse {
-  border-top-color: #34495e;
+  border-top-color: #484746;
 }
 .open > .dropdown-arrow {
   margin-top: 9px;
@@ -2479,7 +2479,7 @@ textarea[class*="span"] {
   -webkit-backface-visibility: hidden;
 }
 .dropdown-inverse {
-  background-color: #34495e;
+  background-color: #484746;
   color: #cccccc;
   padding: 4px 0 6px;
 }
@@ -2621,7 +2621,7 @@ textarea[class*="span"] {
 }
 .has-switch span.switch-left {
   border-radius: 30px 0 0 30px;
-  background-color: #34495e;
+  background-color: #484746;
   color: #1abc9c;
   border-left: 1px solid transparent;
 }
@@ -2635,7 +2635,7 @@ textarea[class*="span"] {
   text-indent: 0;
 }
 .has-switch label {
-  border: 4px solid #34495e;
+  border: 4px solid #484746;
   border-radius: 50%;
   float: left;
   height: 21px;
@@ -2773,7 +2773,7 @@ textarea[class*="span"] {
   background-color: #8e44ad;
 }
 .palette-wet-asphalt {
-  background-color: #34495e;
+  background-color: #484746;
 }
 .palette-midnight-blue {
   background-color: #2c3e50;
@@ -2877,7 +2877,7 @@ textarea[class*="span"] {
   list-style-type: none;
 }
 .todo li {
-  background: #34495e url(../images/todo/todo.png) 92% center no-repeat;
+  background: #484746 url(../images/todo/todo.png) 92% center no-repeat;
   background-size: 20px 20px;
   cursor: pointer;
   margin-top: 2px;
@@ -2911,7 +2911,7 @@ textarea[class*="span"] {
   background: #1abc9c;
   background-size: 16px 16px;
   border-radius: 6px 6px 0 0;
-  color: #34495e;
+  color: #484746;
   padding: 19px 25px 20px;
 }
 .todo-search:before {
@@ -2927,7 +2927,7 @@ textarea[class*="span"] {
 input.todo-search-field {
   background: none;
   border: none;
-  color: #34495e;
+  color: #484746;
   font-size: 19px;
   font-weight: 700;
   margin: 0;
@@ -2939,13 +2939,13 @@ input.todo-search-field {
   box-shadow: none;
 }
 input.todo-search-field:-moz-placeholder {
-  color: #34495e;
+  color: #484746;
 }
 input.todo-search-field::-webkit-input-placeholder {
-  color: #34495e;
+  color: #484746;
 }
 input.todo-search-field.placeholder {
-  color: #34495e;
+  color: #484746;
 }
 .todo-icon {
   float: left;
