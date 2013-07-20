@@ -67,16 +67,6 @@ display:none;
 
 }
 
-#refreshbut {
-                                position: absolute;
-								z-index: 101;			
-								opacity:1;
-                                bottom:3.5%;
-                                left:96%;
-                                opacity:0.2;
-                                -webkit-transition: all 1s ease-in-out;
-
-}
 
 #infopbut {
                                 position: absolute;
@@ -89,9 +79,6 @@ display:none;
                                 box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);*/
 
 }
-
-#refreshbut:hover {
-opacity:0.95;}
 #directbut:hover {
 opacity:0.95;}
 
@@ -104,7 +91,10 @@ opacity:0.95;}
 								-webkit-transition: all 1s ease-in-out;
                                 text-align:center;
 		}
-
+#infop #spblock{
+    display:block;
+    
+}
 #infop   { 
 								position: absolute;
 								z-index: 100;			
@@ -115,7 +105,7 @@ opacity:0.95;}
                                 opacity:0;
                                 display:none;
                                 left:-1000px;
-                                
+                                width:25%!important;
                                 background-color:#fefefe;
                                 padding:1%;
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -137,7 +127,11 @@ opacity:1!important;
     display:block;
 
 }		
-
+.btn-infop{
+    width:40%!important;
+    display:inline;
+    
+}
 .btn-pink {
   background-color: hsl(326, 100%, 41%) !important;
   background-repeat: repeat-x;

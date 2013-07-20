@@ -14,7 +14,6 @@
 
 <body>
 <i id="directbut" class="icon-list" onclick="showDirections()"></i>
-<i id="refreshbut" class="icon-repeat" onclick="refreshdir()"></i>
 <i id="infopbut" class="icon-chevron-right centerVertical" onclick="infoptoggle()"></i>
 <div id="over" class="centerHorizontal centerVertical">
 <input id="location" class="overval" placeholder="Location" type="text" value="Hereford">
@@ -22,9 +21,10 @@
 <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run" onclick="submit()">
 </div>
     <div id="infop" class="centerVertical">
-    <span id="prefix"></span><span id="routeDistance"></span>
+    <span id="spblock"><span id="prefix"></span><span id="routeDistance"></span></span>
     <!--<input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
-    <input id="closeinfop" class="btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()"></div>
+    <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()">
+    <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?" onclick="refreshdir()"></div>
 <div id="googleMap"></div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
