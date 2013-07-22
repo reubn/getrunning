@@ -1,3 +1,8 @@
+var yes ="http://crreative.tk/bts";
+var no ="Why Not:(";
+console.warn('Hello Dev!!');
+console.warn('Fancy a behind the scenes?');
+
 window.onload = function() {// Check to see if the browser supports the GeoLocation API.
     $('#infopbut').css("display", "none"); 
 	if (navigator.geolocation) {
