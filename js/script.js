@@ -106,7 +106,7 @@ function submit() {
   var geocoder=new google.maps.Geocoder();
   var GeoReq={ address:location };
   geocoder.geocode(GeoReq, function (results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
+    if (status == google.maps.GeocoderStatus.OK && document.getElementById("distance").value >= "1") {
       var LatLng=results[0].geometry.location;
       map.setCenter(LatLng);
       findPts(LatLng);
@@ -233,7 +233,7 @@ function plotRoute() {
       }
     }
     else if (status == google.maps.DirectionsStatus.OVER_QUERY_LIMIT) {
-      alert('Query limit reached, waiting 3 seconds');
+      console.log('Query limit reached, waiting 3 seconds');
       setTimeout(plotRoute, 3000);
     }
     else if (status == google.maps.DirectionsStatus.ZERO_RESULTS) {
@@ -255,7 +255,7 @@ function showDirections() {
   var uniqueSteps = [steps[0]]; //initialize to avoid steps[i-1] --> negative index
   var instructions = [];
   var header = 
-      '<head><link href="http://localhost/getrunning/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="http://localhost/getrunning/css/flat-ui.css" rel="stylesheet" type="text/css"><link href="http://localhost/getrunning/css/style.css" rel="stylesheet" type="text/css"><title>Directions</title><body>';  
+      '<head><link href="' + window.location.href + 'css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="' + window.location.href + 'css/flat-ui.css" rel="stylesheet" type="text/css"><link href="' + window.location.href + 'css/style.css" rel="stylesheet" type="text/css"><title>Directions</title><body>';  
   for (var i=1; i<steps.length; i++) {
     if (steps[i] != uniqueSteps[uniqueSteps.length-1]
         && steps[i].instructions.split(" ").length>2
