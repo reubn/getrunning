@@ -142,7 +142,8 @@ function findPts(LatLng) {
   var Long1 = LatLng1.lng()*Math.PI/180;
   var dista = document.getElementById("distance").value*0.609344;
   var dist = document.getElementById("distance").value*0.609344;
-  var phi = Math.PI/180*((150-30)*Math.random()+30); //angle between leg1 and leg3
+  //var phi = Math.PI/180*((150-30)*Math.random()+30); //angle between leg1 and leg3
+  var phi = Math.PI/180*((120-60)*Math.random()+60); //angle between leg1 and leg3
   var scale = 0.85; //straitline_distance/actual_distance
   var legDist = scale*dist/(2+2*Math.sin(phi/2));
   var r = 4000*Math.cos(Lat1); //horizontal radius at given latitude
