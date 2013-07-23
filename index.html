@@ -8,6 +8,9 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/flat-ui.css" rel="stylesheet" type="text/css">  
 <link href="css/style.css" rel="stylesheet" type="text/css">
+<script>
+var overop;    
+</script>
 <!-- Mapping and logic -->
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAue8HUBWPfP9K6blbupxpEYHCj98VnWi0&sensor=false"></script>
 </head>
@@ -25,13 +28,17 @@
 <!--    <input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
     <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()">
     <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?" onclick="refreshdir()"></div>
-<div id="googleMap"></div>
+<div class="anim" id="googleMap"></div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
 <script type="text/javascript" src="js/midway.min.js"></script>
 <script>
+ $('#subit').click(function() {
+ overop = 1;
+ console.log('clicked');
+ });
  function overtoggle() {
  $('#googleMap').css({"-webkit-filter" : "blur(0)"})
  $('#googleMap').css({"filter" : "blur()"})

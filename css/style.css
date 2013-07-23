@@ -88,7 +88,7 @@ opacity:0.95;}
 								position: absolute;
 								z-index: 99;			
 								opacity:1;
-								
+								-webkit-transition: opacity 0.5s!important;
                                 text-align:center;
 		}
 #infop #spblock{
@@ -180,7 +180,7 @@ border-color: #8E44AD!important;
 }
 
 
-*:not(#over):not(#infop):not(#directbut):not(#infopbut){
+.anim, #over{
 	-webkit-perspective: 1300px;
 	-moz-perspective: 1300px;
 	perspective: 1300px;
@@ -190,25 +190,12 @@ border-color: #8E44AD!important;
 	-webkit-transform: scale(0.4);
 	-moz-transform: scale(0.4);
 	transform: scale(0.4);
-	-webkit-animation: popUp .8s ease-in forwards;
-	-moz-animation: popUp .8s ease-in forwards;
-	animation: popUp .8s ease-in forwards;
+	-webkit-animation: popUp .8s ease-in forwards 1;
+	-moz-animation: popUp .8s ease-in forwards 1;
+	animation: popUp .8s ease-in forwards 1;
 }
 
-#over {
-	-webkit-perspective: 1300px;
-	-moz-perspective: 1300px;
-	perspective: 1300px;
-	-webkit-transform-style: preserve-3d;
-	-moz-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-	-webkit-transform: scale(0.4);
-	-moz-transform: scale(0.4);
-	transform: scale(0.4);
-	-webkit-animation: popUp .5s ease-in forwards;
-	-moz-animation: popUp .5s ease-in forwards;
-	animation: popUp .5s ease-in forwards;
-}
+
 
 @-webkit-keyframes popUp {
 	70% { -webkit-transform: scale(1.1); opacity: .8; -webkit-animation-timing-function: ease-out; }
