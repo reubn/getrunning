@@ -25,6 +25,7 @@ window.onload = function() {// Check to see if the browser supports the GeoLocat
 // Enable the visual refresh
 google.maps.visualRefresh = true;
 //var location;
+var routecoords;
 var dista;
 var dist;
 var map;
@@ -76,6 +77,7 @@ function initialize(lata, lona, usegeo) {
   directionsDisplay.setMap(map);
   google.maps.event.addListener(directionsDisplay, 'directions_changed', function () {
     var routeDist = directionsDisplay.directions.routes[0].legs[0].distance.text;
+    routecoords = directionsDisplay.directions.routes[0].overview_path;
     var disttb = document.getElementById("distance").value;
     var routeADist = Math.round(directionsDisplay.directions.routes[0].legs[0].distance.value/100)*0.1;
     document.getElementById("routeDistance").innerHTML = routeDist + " long.";
