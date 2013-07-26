@@ -2,7 +2,11 @@ var yes ="http://crreative.tk/bts";
 var no ="Why Not:(";
 console.warn('Hello Dev!!');
 console.warn('Fancy a behind the scenes?');
-
+function convertToHHMM(info) {
+  var hrs = parseInt(Number(info));
+  var min = Math.round((Number(info)-hrs) * 60);
+  return hrs+':'+min;
+}
 window.onload = function() {// Check to see if the browser supports the GeoLocation API.
     $('#infopbut').css("display", "none"); 
 	if (navigator.geolocation) {
@@ -25,6 +29,10 @@ window.onload = function() {// Check to see if the browser supports the GeoLocat
 // Enable the visual refresh
 google.maps.visualRefresh = true;
 //var location;
+var routeTimeW;
+var routeTimeR;
+var routeTimeC;
+var routeDist;
 var routecoords;
 var dista;
 var dist;
@@ -76,12 +84,15 @@ function initialize(lata, lona, usegeo) {
   map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
   directionsDisplay.setMap(map);
   google.maps.event.addListener(directionsDisplay, 'directions_changed', function () {
-    var routeDist = directionsDisplay.directions.routes[0].legs[0].distance.text;
+    routeDist = directionsDisplay.directions.routes[0].legs[0].distance.text;
     routecoords = directionsDisplay.directions.routes[0].overview_path;
     var disttb = document.getElementById("distance").value;
     var routeADist = Math.round(directionsDisplay.directions.routes[0].legs[0].distance.value/100)*0.1;
     document.getElementById("routeDistance").innerHTML = routeDist + " long.";
-      
+      routeTimeW = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value/5632.7);
+      routeTimeR = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value/11070.1);
+      routeTimeC = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value/20358.8);
+      $('#time').text("R " + routeTimeR + " C " + routeTimeC + " W " + routeTimeW)
       if (routeADist > disttb){
           //More To Run
       $('#prefix').text("Unlucky. Your route came out a tad longer mate. It's ");

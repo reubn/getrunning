@@ -54,7 +54,20 @@ overflow-y:hidden;
 margin:3px;
 display:none;
 }
+.timedisp {
+position: absolute;
+z-index: 101;
+top:1%;
+left:0.75%;
+opacity:0.2;
+-webkit-transition: all 1s ease-in-out;
 
+}
+
+.timedisp:hover {
+opacity:0.95;
+
+}
 
 #directbut {
  position: absolute;
