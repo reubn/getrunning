@@ -124,7 +124,7 @@ function submit() {
   var geocoder=new google.maps.Geocoder();
   var GeoReq={ address:location };
   geocoder.geocode(GeoReq, function (results, status) {
-    if (status == google.maps.GeocoderStatus.OK && document.getElementById("distance").value >= "1" && document.getElementById("distance").value <= "999") {
+    if (status == google.maps.GeocoderStatus.OK && document.getElementById("distance").value >= "1" && document.getElementById("distance").value <= "998") {
       var LatLng=results[0].geometry.location;
       map.setCenter(LatLng);
       findPts(LatLng);
