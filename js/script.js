@@ -53,7 +53,7 @@ $('#closeinfop').click(function() {
     
 });
 function infoptoggle(){
-    $('#infopbut').css("display", "none"); 
+$('#infopbut').css("display", "none"); 
 $("#infop").toggleClass("infout");
 
 } 
