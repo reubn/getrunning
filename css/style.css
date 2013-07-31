@@ -38,6 +38,7 @@
 
 *{
 font-family:'open_sans'!important;
+
 }
 html { height: 100% 
 }
@@ -223,4 +224,34 @@ animation: popUp .8s ease-in forwards 1;
 @keyframes popUp {
 70% { transform: scale(1.1); opacity: .8; animation-timing-function: ease-out; }
 100% { transform: scale(1); opacity: 1; }
+}
+/*Phone Port*/
+@media only screen and (max-device-width: 320px) {
+		#over{
+        width:65%;
+        
+    }
+    
+    #infop{
+        width:70%!important;
+        
+        
+    }
+    
+    #refreshbut{
+        width:55%!important;
+        margin-bottom:2%;
+        
+    }
+		}
+/*Phone Land*/
+@media only screen and (min-width : 321px) {
+.overval{
+        width:96%;
+        
+    }
+    #infop{
+        width:70%!important;
+        
+    }
 }
