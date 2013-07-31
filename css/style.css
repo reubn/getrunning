@@ -226,7 +226,7 @@ animation: popUp .8s ease-in forwards 1;
 100% { transform: scale(1); opacity: 1; }
 }
 /*Phone Port*/
-@media only screen and (max-device-width: 320px) {
+@media only screen and (max-width: 480px) {
 		#over{
         width:65%;
         
@@ -238,14 +238,14 @@ animation: popUp .8s ease-in forwards 1;
         
     }
     
-    #refreshbut{
+    #refreshbut {
         width:55%!important;
         margin-bottom:2%;
         
     }
 		}
 /*Phone Land*/
-@media only screen and (min-width : 321px) {
+@media only screen and (min-width : 480px, orientation:portrait) {
 .overval{
         width:96%;
         
