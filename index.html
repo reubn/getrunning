@@ -4,10 +4,10 @@
 <head>
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
  <meta name="apple-mobile-web-app-capable" content="yes">
- <link rel="stylesheet" href="vendor/css/jquery-ui-1.10.3.custom.min.css" />                                                               <!-- Style -->
+ <link rel="stylesheet" href="vendor/css/jquery-ui-1.10.3.custom.min.css" /> <!-- Style -->
 <title>GetRunning</title>
 <link href="vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="vendor/css/flat-ui.css" rel="stylesheet" type="text/css">  
+<link href="vendor/css/flat-ui.css" rel="stylesheet" type="text/css"> 
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <script>
 var overop;
@@ -25,11 +25,11 @@ var overop;
 <input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1 value="5">
 <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run" onclick="submit()">
 </div>
-    <div id="infop" class="centerVertical">
-    <span id="spblock"><span id="prefix"></span><span id="routeDistance"></span></span>
-<!--    <input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
-    <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()">
-    <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?" onclick="refreshdir()"></div>
+ <div id="infop" class="centerVertical">
+ <span id="spblock"><span id="prefix"></span><span id="routeDistance"></span></span>
+<!-- <input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
+ <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()">
+ <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?" onclick="refreshdir()"></div>
 <div class="anim" id="googleMap"></div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
@@ -47,48 +47,48 @@ var overop;
  $('#googleMap').css({"filter" : "blur()"})
  $('#over').css({"opacity" : "0"})
  setTimeout(function () {
-  $('#over').css({"display" : "none"})
+ $('#over').css({"display" : "none"})
  }, 600);
  
 }</script>
 <script>
-  $(function() {
-      
-    $( "#location" ).autocomplete({
-        open: function() {
-            $('#location').css('border-bottom-left-radius', "0px");
-            $('#location').css('border-bottom-right-radius', "0px");
-        },
-        close: function() {
-            $('#location').css('border-bottom-left-radius', "6px");
-            $('#location').css('border-bottom-right-radius', "6px");
-        },
-      source: function( request, response ) {
-        $.ajax({
-          url: "http://ws.geonames.org/searchJSON",
-          dataType: "jsonp",
-          search: function(){
-            //$ulForResults.empty();
-        },
-        
-          data: {
-            featureClass: "P",
-            style: "full",
-            maxRows: 5,
-            name_startsWith: request.term
-          },
-          success: function( data ) {
-            response( $.map( data.geonames, function( item ) {
-              return {
-                label: item.name + (item.adminName1 ? ", " + item.adminName1 : ""),
-                value: item.name + (item.adminName1 ? ", " + item.adminName1 : "")
-              }
-            }));
-          }
-        });
-      }
-    });
-  });
-  </script>
+ $(function() {
+ 
+ $( "#location" ).autocomplete({
+ open: function() {
+ $('#location').css('border-bottom-left-radius', "0px");
+ $('#location').css('border-bottom-right-radius', "0px");
+ },
+ close: function() {
+ $('#location').css('border-bottom-left-radius', "6px");
+ $('#location').css('border-bottom-right-radius', "6px");
+ },
+ source: function( request, response ) {
+ $.ajax({
+ url: "http://ws.geonames.org/searchJSON",
+ dataType: "jsonp",
+ search: function(){
+ //$ulForResults.empty();
+ },
+ 
+ data: {
+ featureClass: "P",
+ style: "full",
+ maxRows: 5,
+ name_startsWith: request.term
+ },
+ success: function( data ) {
+ response( $.map( data.geonames, function( item ) {
+ return {
+ label: item.name + (item.adminName1 ? ", " + item.adminName1 : ""),
+ value: item.name + (item.adminName1 ? ", " + item.adminName1 : "")
+ }
+ }));
+ }
+ });
+ }
+ });
+ });
+ </script>
 </body>
 </html>
