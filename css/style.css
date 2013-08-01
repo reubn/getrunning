@@ -249,7 +249,8 @@ animation: popUp .8s ease-in forwards 1;
     }
 		}
 /*Phone Land*/
-@media only screen and (min-width : 480px, orientation:landscape) {
+@media only screen 
+and (max-width : 321px) {
 .overval{
         width:96%!important;
         
