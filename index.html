@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--Uses code from https://github.com/ben-eysenbach/run_map-->
+<html>
+<head>
+<!-- 
+`````````````````````````````````````````````````````````````````````````````````````````````````````
+``           `````````               ``     `````````     ```            ``````` `````````````     ``
+`               `````               ``      ````````     ```                ```   ```````````      ``
+`                 ```               ``      ````````     ```                 ``      ````````      ``
+`     ``````      ```     ````````````      ````````     ```     ``````      ``        ``````      ``
+`     ```````      ``      ```````````      ````````     ```     `````      ```           ```      ``
+`     ``````      ```             ````      ````````     ```              `````                    ``
+`                ````             ````      ````````     ```                ```      `             ``
+`               `````     ````````````      ````````     ```     ```````     ``      ```           ``
+`      ``       `````     ````````````      ```````      ```     ```````      `      ``````        ``			````````````	```````````	
+`     `````      ````               ```                 ````                 ``      ````````      ``			`          `	`		 `
+`     ``````      ```               ````               `````                ```      ```````````   ``   		````    ````	`		`
+`     ````````     ``               ```````         ````````          `````````     `````````````````       		`	`		`		  `
+`````````````````````````````````````````````````````````````````````````````````````````````````````  ` ` `   		`   `  		`	`		`
+																									   ` ` `		`	`		`	` `		`
+																									   ` ` `		`````		`````	`````
+																									   -->
+<meta name="viewport" content="width=viewport-width; initial-scale=1.0; maximum-scale=1.0;">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <link rel="stylesheet" href="vendor/css/jquery-ui-1.10.3.custom.min.css" /> <!-- Style -->
+<title>GetRunning</title>
+<link href="vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="vendor/css/flat-ui.css" rel="stylesheet" type="text/css"> 
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script>
+var overop;
+</script>
+<!-- Mapping and logic -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAue8HUBWPfP9K6blbupxpEYHCj98VnWi0&sensor=false"></script>
+</head>
+
+<body>
+<div class="timedisp"><i class="icon-check" id="chngtd"></i><span id="time"></span></div>
+<i id="directbut" class="icon-list" onclick="showDirections()"></i>
+<i id="infopbut" class="icon-chevron-right centerVertical" onclick="infoptoggle()"></i>
+<div id="over" class="centerHorizontal centerVertical">
+<input id="location" class="overval" placeholder="Location" type="text" value="Hereford" x-webkit-speech>
+<input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1 value="5">
+<input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run" onclick="submit()">
+</div>
+ <div id="infop" class="centerVertical">
+ <span id="spblock"><span id="prefix"></span><span id="routeDistance"></span></span>
+<!-- <input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
+ <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()">
+ <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?" onclick="refreshdir()"></div>
+<div class="anim" id="googleMap"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="vendor/js/bootstrap.min.js"></script>
+<script src="vendor/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="js/midway.min.js"></script>
+
+<script>
+ $('#subit').click(function() {
+ overop = 1;
+ console.log('clicked');
+ });
+ function overtoggle() {
+ $('#googleMap').css({"-webkit-filter" : "blur(0)"})
+ $('#googleMap').css({"filter" : "blur()"})
+ $('#over').css({"opacity" : "0"})
+ setTimeout(function () {
+ $('#over').css({"display" : "none"})
+ }, 600);
+ 
+}</script>
+<script>
+ $(function() {
+ 
+ $( "#location" ).autocomplete({
+ open: function() {
+ $('#location').css('border-bottom-left-radius', "0px");
+ $('#location').css('border-bottom-right-radius', "0px");
+ },
+ close: function() {
+ $('#location').css('border-bottom-left-radius', "6px");
+ $('#location').css('border-bottom-right-radius', "6px");
+ },
+ source: function( request, response ) {
+ $.ajax({
+ url: "http://ws.geonames.org/searchJSON",
+ dataType: "jsonp",
+ search: function(){
+ //$ulForResults.empty();
+ },
+ 
+ data: {
+ featureClass: "P",
+ style: "full",
+ maxRows: 5,
+ name_startsWith: request.term
+ },
+ success: function( data ) {
+ response( $.map( data.geonames, function( item ) {
+ return {
+ label: item.name + (item.adminName1 ? ", " + item.adminName1 : ""),
+ value: item.name + (item.adminName1 ? ", " + item.adminName1 : "")
+ }
+ }));
+ }
+ });
+ }
+ });
+ });
+ </script>
+</body>
+</html>
