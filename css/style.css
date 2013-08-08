@@ -35,7 +35,6 @@
  font-style: lighter;
 
 }
-
 *{
 font-family:'open_sans'!important;
 
@@ -119,7 +118,7 @@ opacity:1;
  opacity:0;
  display:none;
  left:-1000px;
- width:30%!important;
+ width:auto!important;
  background-color:#fefefe;
  padding:1%;
  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -143,7 +142,9 @@ opacity:1!important;
 }
 .btn-infop{
  width:40%!important;
+min-width:135px!important;
  display:inline;
+margin-top:5px!important
  
 }
 .btn-pink {
