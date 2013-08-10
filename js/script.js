@@ -19,15 +19,15 @@ window.onload = function() {// Check to see if the browser supports the GeoLocat
 			initialize(lat, lon, true);
 		}, function(){
         
-        initialize("","", false);
+        initialize("52.0500","-2.7167", false);
         });
 	} else {
-		initialize("","", false);
+		initialize("52.0500","-2.7167", false);
 	}
 
 }
 // Enable the visual refresh
-google.maps.visualRefresh = true;
+google.maps.visualRefresh p= true;
 //var location;
 var routeTimeW;
 var routeTimeR;
@@ -70,7 +70,7 @@ function initialize(lata, lona, usegeo) {
     });
   directionsDisplay = new google.maps.DirectionsRenderer({draggable:true});
   var mapProp = {
-    center: new google.maps.LatLng(lata || 52.0500,lona || -2.7167),
+    center: new google.maps.LatLng(lata,lona),
     zoom: 12,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     disableDefaultUI: true,
