@@ -1,3 +1,5 @@
+var lat;
+var lon;
 var yes ="http://crreative.tk/bts";
 var no ="Why Not:(";
 console.warn('Hello Dev!!');
@@ -12,17 +14,17 @@ window.onload = function() {// Check to see if the browser supports the GeoLocat
 	if (navigator.geolocation) {
 		// Get the location
 		navigator.geolocation.getCurrentPosition(function(position) {
-			var lat = position.coords.latitude;
-			var lon = position.coords.longitude;
+			lat = position.coords.latitude;
+			lon = position.coords.longitude;
 
 			// Show the map
 			initialize(lat, lon, true);
 		}, function(){
         
-        initialize("52.0500","-2.7167", false);
+        initialize("","", false);
         });
 	} else {
-		initialize("52.0500","-2.7167", false);
+		initialize("","", false);
 	}
 
 }
@@ -70,7 +72,7 @@ function initialize(lata, lona, usegeo) {
     });
   directionsDisplay = new google.maps.DirectionsRenderer({draggable:true});
   var mapProp = {
-    center: new google.maps.LatLng(lata,lona),
+    center: new google.maps.LatLng((typeof lata === 'undefined') ? 52.056398 : lata,(typeof lona === 'undefined') ? -2.715974 : lona),
     zoom: 12,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     disableDefaultUI: true,
