@@ -63,16 +63,9 @@ $("#infop").toggleClass("infout");
 function initialize(lata, lona, usegeo) {
     if(usegeo == true){
     document.getElementById("location").value=lata + " , " + lona;
-    document.getElementById("location").placeholder="Your Current Location!";    
-    }
-    var polylineOptions = new google.maps.Polyline({
-    strokeColor: 'rgba(142, 68, 173, 0.65)',
-    strokeOpacity: 0.65,
-    strokeWeight: 6
-    });
-  directionsDisplay = new google.maps.DirectionsRenderer({draggable:true});
+    document.getElementById("location").placeholder="Your Current Location!";
   var mapProp = {
-    center: new google.maps.LatLng((typeof lata === 'undefined') ? 52.056398 : lata,(typeof lona === 'undefined') ? -2.715974 : lona),
+    center: new google.maps.LatLng(lata,lona),
     zoom: 12,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     disableDefaultUI: true,
@@ -83,6 +76,27 @@ function initialize(lata, lona, usegeo) {
   streetViewControl: false,
   overviewMapControl: false
     };
+    } else {
+     var mapProp = {
+    center: new google.maps.LatLng(52.056398,-2.715974),
+    zoom: 12,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    disableDefaultUI: true,
+    panControl: false,
+  zoomControl: false,
+  mapTypeControl: true,
+  scaleControl: false,
+  streetViewControl: false,
+  overviewMapControl: false
+    };
+};
+    var polylineOptions = new google.maps.Polyline({
+    strokeColor: 'rgba(142, 68, 173, 0.65)',
+    strokeOpacity: 0.65,
+    strokeWeight: 6
+    });
+  directionsDisplay = new google.maps.DirectionsRenderer({draggable:true});
+  
   map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
   directionsDisplay.setMap(map);
   google.maps.event.addListener(directionsDisplay, 'directions_changed', function () {
