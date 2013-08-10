@@ -70,7 +70,7 @@ function initialize(lata, lona, usegeo) {
     });
   directionsDisplay = new google.maps.DirectionsRenderer({draggable:true});
   var mapProp = {
-    center: new google.maps.LatLng(52.0500, -2.7167),
+    center: new google.maps.LatLng(lata || 52.0500,lona || -2.7167),
     zoom: 12,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     disableDefaultUI: true,
