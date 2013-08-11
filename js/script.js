@@ -1,3 +1,7 @@
+var maplat;
+var maplon;
+maplat = 52.056398;
+maplon = -2.715974;
 var lat;
 var lon;
 var yes ="http://crreative.tk/bts";
@@ -16,6 +20,8 @@ window.onload = function() {// Check to see if the browser supports the GeoLocat
 		navigator.geolocation.getCurrentPosition(function(position) {
 			lat = position.coords.latitude;
 			lon = position.coords.longitude;
+                        maplat = position.coords.latitude;
+			maplon = position.coords.longitude;
 
 			// Show the map
 			initialize(lat, lon, true);
@@ -64,8 +70,9 @@ function initialize(lata, lona, usegeo) {
     if(usegeo == true){
     document.getElementById("location").value=lata + " , " + lona;
     document.getElementById("location").placeholder="Your Current Location!";
-  var mapProp = {
-    center: new google.maps.LatLng(lata,lona),
+    }
+var mapProp = {
+    center: new google.maps.LatLng(maplat,maplon),
     zoom: 12,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     disableDefaultUI: true,
@@ -76,20 +83,6 @@ function initialize(lata, lona, usegeo) {
   streetViewControl: false,
   overviewMapControl: false
     };
-    } else {
-     var mapProp = {
-    center: new google.maps.LatLng(52.056398,-2.715974),
-    zoom: 12,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-    disableDefaultUI: true,
-    panControl: false,
-  zoomControl: false,
-  mapTypeControl: true,
-  scaleControl: false,
-  streetViewControl: false,
-  overviewMapControl: false
-    };
-};
     var polylineOptions = new google.maps.Polyline({
     strokeColor: 'rgba(142, 68, 173, 0.65)',
     strokeOpacity: 0.65,
