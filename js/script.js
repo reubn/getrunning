@@ -35,7 +35,7 @@ window.onload = function() {// Check to see if the browser supports the GeoLocat
 
 }
 // Enable the visual refresh
-google.maps.visualRefresh p= true;
+google.maps.visualRefresh = true;
 //var location;
 var routeTimeW;
 var routeTimeR;
