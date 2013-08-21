@@ -63,7 +63,10 @@ opacity:0.2;
 -webkit-transition: all 1s ease-in-out;
 
 }
-
+#subit{
+-webkit-animation-duration: 0.8s;
+-moz-animation-duration: 0.8s;
+}
 .timedisp:hover {
 opacity:0.95;
 

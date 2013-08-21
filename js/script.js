@@ -144,18 +144,20 @@ function submit() {
         $("#subit").val("Sorry. There's a problem!" );//+ status);
         $("#subit").removeClass("btn-whist" );
         $("#subit").addClass("btn-danger" );
+        $("#subit").addClass("animated shake" );
         //$("#ok").css("display", "inline");
         setTimeout(function () {
             $('#subit').val("Run");
             $("#subit").removeClass("btn-danger" );
             $("#subit").addClass("btn-whist" );
+            $("#subit").removeClass("animated shake" );
 }, 1000);
         
         
         $(".overval").addClass("noval" );
         setTimeout(function () {
             $(".overval").removeClass("noval" );
-}, 1100);
+}, 990);
       
       }
     });
