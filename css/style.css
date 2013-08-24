@@ -217,6 +217,10 @@ animation: popUp .8s ease-in forwards 1;
         width:94%!important;
         
     }
+    
+    #subit{
+        width:102%!important;
+    }
 		}
 /*Phone Land*/
 @media only screen 
