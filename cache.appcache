@@ -14,5 +14,7 @@
       $hashes .= md5_file($file);
     }
   }
+  echo "NETWORK:\n*\n";
+       
   echo "# Hash: " . md5($hashes) . "\n";
 ?>
