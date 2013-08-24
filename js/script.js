@@ -4,10 +4,9 @@ maplat = 52.056398;
 maplon = -2.715974;
 var lat;
 var lon;
-var yes ="http://crreative.tk/bts";
-var no ="Why Not:(";
-console.warn('Hello Dev!!');
-console.warn('Fancy a behind the scenes?');
+var yes ="http://github.com/reubn/getrunning";
+var no ="Forever alone";
+console.log('Checking up under the hood eh? Well yes or no?');
 function convertToHHMM(info) {
   var hrs = parseInt(Number(info));
   var min = Math.round((Number(info)-hrs) * 60);
@@ -139,13 +138,25 @@ function submit() {
       findPts(LatLng);
       plotRoute();
     overtoggle();
+        console.log("EvOK");
       }
-    else{
+    else if(status == google.maps.GeocoderStatus.OK){
+        console.log("DisNO");
         $("#subit").val("Sorry. There's a problem!" );//+ status);
         $("#subit").removeClass("btn-whist" );
         $("#subit").addClass("btn-danger" );
         $("#subit").addClass("animated shake" );
         //$("#ok").css("display", "inline");
+        $("#distance").addClass("noval" );
+        setTimeout(function () {
+            $("#distance").removeClass("noval" );
+            
+}, 990);
+        $("#location").addClass("gdval" );
+        setTimeout(function () {
+            $("#location").removeClass("gdval" );
+}, 990);
+      
         setTimeout(function () {
             $('#subit').val("Run");
             $("#subit").removeClass("btn-danger" );
@@ -154,11 +165,56 @@ function submit() {
 }, 1000);
         
         
+        
+      } else if(document.getElementById("distance").value > 0.999 && document.getElementById("distance").value < 1001){
+          console.log("LocNO");
+          $("#subit").val("Sorry. There's a problem!" );//+ status);
+        $("#subit").removeClass("btn-whist" );
+        $("#subit").addClass("btn-danger" );
+        $("#subit").addClass("animated shake" );
+        //$("#ok").css("display", "inline");
+        $("#location").addClass("noval" );
+        setTimeout(function () {
+            $("#location").removeClass("noval" );
+}, 990);
+          $("#distance").addClass("gdval" );
+        setTimeout(function () {
+            $("#distance").removeClass("gdval" );
+}, 990);
+      
+        setTimeout(function () {
+            $('#subit').val("Run");
+            $("#subit").removeClass("btn-danger" );
+            $("#subit").addClass("btn-whist" );
+            $("#subit").removeClass("animated shake" );
+}, 1000);
+        
+        
+        
+          
+      } else {
+          console.log("NoNO");
+          $("#subit").val("Sorry. There's a problem!" );//+ status);
+        $("#subit").removeClass("btn-whist" );
+        $("#subit").addClass("btn-danger" );
+        $("#subit").addClass("animated shake" );
+        //$("#ok").css("display", "inline");
         $(".overval").addClass("noval" );
         setTimeout(function () {
             $(".overval").removeClass("noval" );
 }, 990);
       
+        setTimeout(function () {
+            $('#subit').val("Run");
+            $("#subit").removeClass("btn-danger" );
+            $("#subit").addClass("btn-whist" );
+            $("#subit").removeClass("animated shake" );
+}, 1000);
+        
+        
+        
+          
+          
       }
     });
 }
