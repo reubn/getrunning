@@ -1,3 +1,4 @@
+$('#infopbut').addClass('nsh');
 var maplat;
 var maplon;
 maplat = 52.056398;
@@ -60,6 +61,7 @@ $('#closeinfop').click(function() {
     
 });
 function infoptoggle(){
+$('#infopbut').removeClass('nsh');
 $('#infopbut').css("display", "none"); 
 $("#infop").toggleClass("infout");
 
