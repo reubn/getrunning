@@ -5,7 +5,7 @@ maplat = 52.056398;
 maplon = -2.715974;
 var lat;
 var lon;
-var yes ="http://github.com/reubn/getrunning";
+var yes ="https://github.com/reubn/getrunning";
 var no ="Forever alone";
 console.log('Checking up under the hood eh? Well yes or no?');
 function convertToHHMM(info) {
