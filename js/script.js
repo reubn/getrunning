@@ -1,3 +1,10 @@
+function togabout(){
+$('#ab').toggleClass("nsh");
+setTimeout(function () {
+$('#ab').toggleClass("noop");
+ }, 600);
+Midway();
+}
 $('#infopbut').addClass('nsh');
 var maplat;
 var maplon;
@@ -64,7 +71,6 @@ function infoptoggle(){
 $('#infopbut').removeClass('nsh');
 $('#infopbut').css("display", "none"); 
 $("#infop").toggleClass("infout");
-
 } 
 
 function initialize(lata, lona, usegeo) {

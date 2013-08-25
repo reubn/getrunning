@@ -5,7 +5,9 @@
 }
 *{
 font-family:'open_sans'!important;
-
+}
+*:focus {
+    outline: 0;
 }
 html { height: 100% 
 }
@@ -34,6 +36,7 @@ opacity:0.2;
 #subit{
 -webkit-animation-duration: 0.8s;
 -moz-animation-duration: 0.8s;
+    margin-top:2%;
 }
 .timedisp:hover {
 opacity:0.95;
@@ -45,17 +48,35 @@ opacity:0.95;
 z-index: 101;
 opacity:1;
  bottom:3.5%;
+ top:auto;
  left:98%;
  opacity:0.2;
  -webkit-transition: all 1s ease-in-out;
 
 }
+
+#abbut {
+ position: absolute;
+    top:auto;
+z-index: 101;
+opacity:1;
+ bottom:3.5%;
+ left:96%;
+ opacity:0.2;
+ -webkit-transition: all 1s ease-in-out;
+
+}
+#abbut:hover {
+opacity:0.95;}
 .nsh{
 display:none!important;
 }
-
+.noop{
+    opacity:0!important;
+}
 #infopbut {
  position: absolute;
+    top:auto;
 z-index: 101;
  text-align:center;
  vertical-align:middle;
@@ -170,7 +191,26 @@ border-color: #2ecc71!important;
  
 }
 
+#ab { 
+position: absolute;
+z-index: 110;
+opacity:1;
+-webkit-transition: opacity 0.5s!important;
+text-align:center;
+background-color: rgb(255, 255, 255);
+padding: 1%;
+-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+height: 60%;
+width: 60%;
+}
 
+#abim{
+    float:left;
+    height:35%;
+    width:auto;
+    
+}
 .anim, #over{
 -webkit-perspective: 1300px;
 -moz-perspective: 1300px;
@@ -202,6 +242,72 @@ animation: popUp .8s ease-in forwards 1;
 70% { transform: scale(1.1); opacity: .8; animation-timing-function: ease-out; }
 100% { transform: scale(1); opacity: 1; }
 }
+
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+border: 2px solid #BDC3C7;
+color: #484746;
+font-family: "Open Sans", sans-serif;
+font-size: 14px;
+padding: 8px 5px;
+height: 39px!important;
+    width:198px;
+text-indent: 6px;
+-webkit-appearance: none;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+-webkit-transition: border .25s linear, color .25s linear;
+-moz-transition: border .25s linear, color .25s linear;
+-o-transition: border .25s linear, color .25s linear;
+transition: border .25s linear, color .25s linear;
+-webkit-backface-visibility: hidden;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+background-color: #FFF;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-webkit-transition: border linear .2s,box-shadow linear .2s;
+-moz-transition: border linear .2s,box-shadow linear .2s;
+-o-transition: border linear .2s,box-shadow linear .2s;
+transition: border linear .2s,box-shadow linear .2s;
+}
+
+
+.btn.btn-large {
+font-size: 16.996px;
+line-height: 20px;
+padding: 12px 18px 13px;
+}
+
+
+.btn {
+border: none;
+background: #BDC3C7;
+color: #FFF;
+padding: 9px 12px 10px;
+line-height: 22px;
+text-decoration: none;
+text-shadow: none;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+-webkit-transition: 0.25s;
+-moz-transition: 0.25s;
+-o-transition: 0.25s;
+transition: 0.25s;
+-webkit-backface-visibility: hidden;
+}
+
+
 /*Phone Port*/
 @media only screen and (max-width: 480px) {
 		#over{
