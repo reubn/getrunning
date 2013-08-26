@@ -208,6 +208,15 @@ width: 60%;
     width:auto;
     
 }
+
+#ab > p{
+    
+    text-align:left;
+    padding-left:20%;
+    padding-top:1%;
+    font-size:1.2em;
+    line-height: 150%;
+}
 .anim, #over{
 -webkit-perspective: 1300px;
 -moz-perspective: 1300px;
@@ -261,10 +270,31 @@ animation: popUp .8s ease-in forwards 1;
     #subit{
         width:102%!important;
     }
+    #abim{
+    float:none;    
+    padding: 1%;
+    }
+    #ab > p{
+        float:left;
+        padding-top:0;
+        padding-left:0;
+        font-size:1em;
+        line-height: 125%;
+        text-align:center;
+    }
+    
+     #abim{
+        
+    padding: 1%;}
+        #ab {
+            overflow:scroll;
+        }
+
+    
 		}
 /*Phone Land*/
 @media only screen 
-and (max-width : 321px) {
+and (min-width : 321px) {
 .overval{
         width:96%!important;
         
@@ -273,4 +303,13 @@ and (max-width : 321px) {
         width:70%!important;
         
     }
+    
+     #ab > p{
+        padding-top:0;
+        padding-left:0;
+        font-size:1em;
+        line-height: 150%;
+        text-align:center;
+    }
+   
 }
