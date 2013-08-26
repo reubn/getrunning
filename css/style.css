@@ -201,7 +201,15 @@ box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
 height: 60%;
 width: 60%;
 }
-
+.gmnoprint a, .gmnoprint span {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
+}
+#GMapsID div div a div img{
+    display:none;
+}
 #abim{
     float:left;
     height:35%;
@@ -289,15 +297,30 @@ animation: popUp .8s ease-in forwards 1;
         #ab {
             overflow:scroll;
         }
-
+ #abbut{
+    left:88%;
+        
+    }
+    #directbut{
+        left:94%;
+    }
     
 		}
 /*Phone Land*/
 @media only screen 
-and (min-width : 321px) {
+and (min-device-width : 320px) 
+and (max-device-width : 480px)
+and (orientation : landscape){
 .overval{
         width:96%!important;
         
+    }
+    #abbut{
+    left:92%;    
+        
+    }
+    #directbut{
+        left:96%;
     }
     #infop{
         width:70%!important;
