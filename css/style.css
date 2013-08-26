@@ -1,10 +1,6 @@
-/*FONTS*/ 
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
-
-}
 *{
-font-family:'open_sans'!important;
+font-family:'Open Sans'!important;
 }
 *:focus {
     outline: 0;
