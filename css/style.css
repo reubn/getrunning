@@ -1,4 +1,3 @@
-
 *{
 font-family:'Open Sans'!important;
 }
@@ -290,9 +289,6 @@ animation: popUp .8s ease-in forwards 1;
      #abim{
         
     padding: 1%;}
-        #ab {
-            overflow:scroll;
-        }
  #abbut{
     left:88%;
         
