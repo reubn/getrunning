@@ -3,64 +3,61 @@
 <!-- <html manifest="cache.appcache"> -->
 <html>
 <head>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
- <meta name="apple-mobile-web-app-capable" content="yes">
- <link rel="stylesheet" href="vendor/css/jquery-ui-1.10.3.custom.min.css" /> <!-- Style -->
 <title>GetRunning</title>
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="vendor/css/jquery-ui-1.10.3.custom.min.css" /> <!-- Style -->
 <link href="vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="vendor/css/animate.min.css" rel="stylesheet" type="text/css">
 <link href="vendor/css/flat-ui.css" rel="stylesheet" type="text/css"> 
 <link href="css/style.css" rel="stylesheet" type="text/css">
- <link rel="apple-touch-icon-precomposed" href="img/apple/Icon.png" />
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple/Icon-72.png" />
-      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple/Icon@2x.png" />
-      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple/Icon-72@2x.png" />
-      <link rel="shortcut icon" href="img/favicon.png">
-      <link rel="dns-prefetch" href="//reubn.tk">
-      <link rel="dns-prefetch" href="//fonts.googleapis.com">
-      <link rel="dns-prefetch" href="//ajax.googleapis.com">
-      <link rel="dns-prefetch" href="//maps.googleapis.com">
-      <link rel="dns-prefetch" href="//ws.geonames.org">
-
-<script>
-var overop;
-</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43624612-1', 'reubn.tk');
-  ga('send', 'pageview');
-
-</script>
-<!-- Mapping and logic -->
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAue8HUBWPfP9K6blbupxpEYHCj98VnWi0&sensor=false"></script>
+        <link rel="apple-touch-icon-precomposed" href="img/apple/Icon.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple/Icon-72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple/Icon@2x.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple/Icon-72@2x.png" />
+        <link rel="shortcut icon" href="img/favicon.png">
+            <link rel="dns-prefetch" href="//reubn.tk">
+            <link rel="dns-prefetch" href="//fonts.googleapis.com">
+            <link rel="dns-prefetch" href="//ajax.googleapis.com">
+            <link rel="dns-prefetch" href="//maps.googleapis.com">
+            <link rel="dns-prefetch" href="//ws.geonames.org">
+                <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAue8HUBWPfP9K6blbupxpEYHCj98VnWi0&sensor=false"></script>
+                <script>var overop;</script>
+                <script>
+                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                ga('create', 'UA-43624612-1', 'reubn.tk');
+                ga('send', 'pageview');
+                </script>
 </head>
-
 <body>
-<div class="timedisp"><i class="icon-check" id="chngtd"></i><span id="time"></span></div>
-<i id="directbut" class="icon-list" onclick="showDirections()"></i>
-<i id="abbut" class="icon-info-sign" onclick="togabout()"></i>
-<i id="infopbut" class="icon-chevron-right centerVertical" onclick="infoptoggle()"></i>
-<div id="over" class="centerHorizontal centerVertical">
-<input id="location" class="overval" placeholder="Location" type="text" x-webkit-speech>
-<input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1>
-<input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run" onclick="submit()">
-</div>
- <div id="infop" class="centerVertical">
- <span id="spblock"><span id="prefix"></span><span id="routeDistance"></span></span>
-<!-- <input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
- <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()">
- <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?" onclick="refreshdir()"></div>
 <div class="anim" id="googleMap"></div>
-<div id="ab" class="nsh noop centerHorizontal centerVertical" style="">
-<h1>Hey!</h1>
-<img id="abim" src="">
-<p>This is me and me created GetRunning. GetRunning was born to give people the power to quickly create a path the was a suitable distance without slowly manually finding a route by dragging pins round in Google maps.  </p>
-</div>
+    <div class="timedisp">
+    <i class="icon-check" id="chngtd"></i>
+    <span id="time"></span>
+    </div>
+    <i id="directbut" class="icon-list" onclick="showDirections()"></i>
+    <i id="abbut" class="icon-info-sign" onclick="togabout()"></i>
+    <i id="infopbut" class="icon-chevron-right centerVertical" onclick="infoptoggle()"></i>
+                <div id="over" class="centerHorizontal centerVertical">
+                <input id="location" class="overval" placeholder="Location" type="text" x-webkit-speech>
+                <input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1>
+                <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run" onclick="submit()">
+                </div>
+         <div id="infop" class="centerVertical">
+         <span id="spblock"><span id="prefix"></span><span id="routeDistance"></span></span>
+        <!-- <input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
+         <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()">
+         <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?" onclick="refreshdir()">
+         </div>
+                <div id="ab" class="nsh noop centerHorizontal centerVertical" style="">
+                <h1>Hey!</h1>
+                <img id="abim" src="">
+                <p>This is me and me created GetRunning. GetRunning was born to give people the power to quickly create a path the was a suitable distance without slowly manually finding a route by dragging pins round in Google maps.  </p>
+                </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="vendor/js/bootstrap.min.js"></script>
@@ -69,8 +66,8 @@ var overop;
 <script>
  $('#subit').click(function() {
  overop = 1;
- console.log('clicked');
  });
+ 
  function overtoggle() {
  $('#googleMap').css({"-webkit-filter" : "blur(0)"})
  $('#googleMap').css({"filter" : "blur()"})
@@ -79,8 +76,8 @@ var overop;
  $('#over').css({"display" : "none"})
  }, 600);
  
-}</script>
-<script>
+}
+// AutoComplete
  $(function() {
  
  $( "#location" ).autocomplete({
