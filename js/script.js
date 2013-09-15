@@ -76,6 +76,12 @@ function infoptoggle() {
     $('#infopbut').css("display", "none");
     $("#infop").toggleClass("infout");
 }
+
+//Toggle Info Slide
+function buttoggle() {
+    $('.timedisp').removeClass('nsh');
+    $('#directbut').removeClass('nsh');
+}
 //Ini
 function initialize(lata, lona, usegeo) {
     if (usegeo == true) {
@@ -168,6 +174,7 @@ function submit() {
             findPts(LatLng);
             plotRoute();
             overtoggle();
+            buttoggle();
             console.log("EvOK");
         } else if (status == google.maps.GeocoderStatus.OK) {
             console.log("DisNO");
