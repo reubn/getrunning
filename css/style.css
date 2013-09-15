@@ -196,10 +196,10 @@ box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
 height: 60%;
 width: 60%;
 }
-.gmnoprint a, .gmnoprint span {
+.gm-style-cc a, .gm-style-cc span {
     display:none;
 }
-.gmnoprint div {
+.gm-style-cc div {
     background:none !important;
 }
 #GMapsID div div a div img{
