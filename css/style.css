@@ -220,37 +220,62 @@ width: 60%;
     font-size:1.2em;
     line-height: 150%;
 }
-.anim, #over{
--webkit-perspective: 1300px;
--moz-perspective: 1300px;
-perspective: 1300px;
--webkit-transform-style: preserve-3d;
--moz-transform-style: preserve-3d;
-transform-style: preserve-3d;
--webkit-transform: scale(0.4);
--moz-transform: scale(0.4);
-transform: scale(0.4);
--webkit-animation: popUp .8s ease-in forwards 1;
--moz-animation: popUp .8s ease-in forwards 1;
-animation: popUp .8s ease-in forwards 1;
+#over{
+  -webkit-animation: poopin .6s;
+-moz-animation: poopin .6s;
+animation: poopin .6s ;  
 }
 
+@-webkit-keyframes poopin {
+  50% {
+    opacity: 0;
+    -webkit-transform: scale(0) translateZ(0);
+    -moz-transform: scale(0) translateZ(0);
+    -ms-transform: scale(0) translateZ(0);
+    -o-transform: scale(0) translateZ(0);
+    transform: scale(0) translateZ(0); }
 
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1) translateZ(0);
+    -moz-transform: scale(1) translateZ(0);
+    -ms-transform: scale(1) translateZ(0);
+    -o-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0); } }
 
-@-webkit-keyframes popUp {
-70% { -webkit-transform: scale(1.1); opacity: .8; -webkit-animation-timing-function: ease-out; }
-100% { -webkit-transform: scale(1); opacity: 1; }
-}
+@-moz-keyframes poopin {
+  50% {
+    opacity: 0;
+    -webkit-transform: scale(0) translateZ(0);
+    -moz-transform: scale(0) translateZ(0);
+    -ms-transform: scale(0) translateZ(0);
+    -o-transform: scale(0) translateZ(0);
+    transform: scale(0) translateZ(0); }
 
-@-moz-keyframes popUp {
-70% { -moz-transform: scale(1.1); opacity: .8; -moz-animation-timing-function: ease-out; }
-100% { -moz-transform: scale(1); opacity: 1; }
-}
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1) translateZ(0);
+    -moz-transform: scale(1) translateZ(0);
+    -ms-transform: scale(1) translateZ(0);
+    -o-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0); } }
 
-@keyframes popUp {
-70% { transform: scale(1.1); opacity: .8; animation-timing-function: ease-out; }
-100% { transform: scale(1); opacity: 1; }
-}
+@keyframes poopin {
+  50% {
+    opacity: 0;
+    -webkit-transform: scale(0) translateZ(0);
+    -moz-transform: scale(0) translateZ(0);
+    -ms-transform: scale(0) translateZ(0);
+    -o-transform: scale(0) translateZ(0);
+    transform: scale(0) translateZ(0); }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1) translateZ(0);
+    -moz-transform: scale(1) translateZ(0);
+    -ms-transform: scale(1) translateZ(0);
+    -o-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0); } }
 
 @-webkit-keyframes poopout {
   from {
