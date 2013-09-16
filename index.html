@@ -71,7 +71,8 @@
  function overtoggle() {
  $('#googleMap').css({"-webkit-filter" : "blur(0)"})
  $('#googleMap').css({"filter" : "blur()"})
- $('#over').css({"opacity" : "0"})
+//$('#over').css({"opacity" : "0"})
+ $('#over').addClass("hide");
  setTimeout(function () {
  $('#over').css({"display" : "none"})
  }, 600);

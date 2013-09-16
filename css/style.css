@@ -252,6 +252,71 @@ animation: popUp .8s ease-in forwards 1;
 100% { transform: scale(1); opacity: 1; }
 }
 
+@-webkit-keyframes poopout {
+  from {
+    -webkit-transform: scale(1) translateZ(0);
+    -moz-transform: scale(1) translateZ(0);
+    -ms-transform: scale(1) translateZ(0);
+    -o-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0);
+    opacity: 1; }
+
+  100% {
+    opacity: 0!important;
+    -webkit-transform: scale(0) translateZ(0);
+    -moz-transform: scale(0) translateZ(0);
+    -ms-transform: scale(0) translateZ(0);
+    -o-transform: scale(0) translateZ(0);
+    transform: scale(0) translateZ(0); } }
+
+@-moz-keyframes poopout {
+  from {
+    -webkit-transform: scale(1) translateZ(0);
+    -moz-transform: scale(1) translateZ(0);
+    -ms-transform: scale(1) translateZ(0);
+    -o-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0);
+    opacity: 1; }
+
+  100% {
+    opacity: 0!important;
+    -webkit-transform: scale(0) translateZ(0);
+    -moz-transform: scale(0) translateZ(0);
+    -ms-transform: scale(0) translateZ(0);
+    -o-transform: scale(0) translateZ(0);
+    transform: scale(0) translateZ(0); } }
+
+@keyframes poopout {
+  from {
+    -webkit-transform: scale(1) translateZ(0);
+    -moz-transform: scale(1) translateZ(0);
+    -ms-transform: scale(1) translateZ(0);
+    -o-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0);
+    opacity: 1; }
+
+  100% {
+    opacity: 0!important;
+    -webkit-transform: scale(0) translateZ(0);
+    -moz-transform: scale(0) translateZ(0);
+    -ms-transform: scale(0) translateZ(0);
+    -o-transform: scale(0) translateZ(0);
+    transform: scale(0) translateZ(0); } }
+
+.hide {
+-webkit-animation-duration: 0.5s!important;
+-moz-animation-duration: 0.5s!important;
+animation-duration: 0.5s!important;
+-webkit-animation-fill-mode: forwards!important;
+-moz-animation-fill-mode: forwards!important;
+animation-fill-mode: forwards!important;
+-webkit-animation-name: poopout!important;
+-moz-animation-name: poopout!important;
+animation-name: poopout!important;
+-webkit-animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045)!important;
+-moz-animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045)!important;
+animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045)!important;
+}
 /*Phone Port*/
 @media only screen and (max-width: 480px) {
 		#over{
