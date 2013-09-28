@@ -150,6 +150,10 @@ margin-top:5px!important
  -webkit-font-smoothing: antialiased;
 }
 
+.btn-danger {
+ background-color: #FFDB4C!important;
+}
+
 
 .btn.btn-whist {
  background-color: #FF2A68;
@@ -167,15 +171,15 @@ margin-top:5px!important
 
 .control-group.focus textarea, .control-group.focus input[type="text"], .control-group.focus input[type="password"], .control-group.focus input[type="datetime"], .control-group.focus input[type="datetime-local"], .control-group.focus input[type="date"], .control-group.focus input[type="month"], .control-group.focus input[type="time"], .control-group.focus input[type="week"], .control-group.focus input[type="number"], .control-group.focus input[type="email"], .control-group.focus input[type="url"], .control-group.focus input[type="search"], .control-group.focus input[type="tel"], .control-group.focus input[type="color"], .control-group.focus .uneditable-input, textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
  
-border-color: #8E44AD!important;
+border-color: #FF2A68!important;
 }
 
 .noval{
- border-color: #E74C3C!important;
+ border-color: #FF5E3A!important;
  
 }
 .gdval{
-border-color: #2ecc71!important; 
+border-color: #0BD318!important; 
 }
 
 .btn-info {
