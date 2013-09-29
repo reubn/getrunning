@@ -24,6 +24,7 @@ function convertToHHMM(info) {
     var min = Math.round((Number(info) - hrs) * 60);
     return hrs + ':' + min;
 }
+initialize("", "", false);
 //Geolocation
 window.onload = function () { // Check to see if the browser supports the GeoLocation API.
     $('#infopbut').css("display", "none");
@@ -77,7 +78,7 @@ function infoptoggle() {
     $("#infop").toggleClass("infout");
 }
 
-//Toggle Info Slide
+//Button Tog
 function buttoggle() {
     $('.timedisp').removeClass('nsh');
     $('#directbut').removeClass('nsh');
