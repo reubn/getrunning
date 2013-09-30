@@ -12,17 +12,16 @@
     <meta property="og:title" content="GetRunning" />
     <meta property="og:description" content="Plan running routes with a click of a button." />
     <meta property='og:locale' content='en_GB'/>
-    <meta property="og:type" content="Web App" />
-    <meta property="og:url" content="http://zapto.org:1616/getrunning/" />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content="http://getrunning.reubn.tk" />
-    <meta property="og:image" content="http://zapto.org:1616/getrunning/img/apple/iTunesArtwork.png" />
-    <meta property="og:image" content="http://getrunning.reubn.tk/img/apple/Icon-76@2x.png" />
+    <meta property="og:image" content="http://getrunning.reubn.tk/img/apple/iTunesArtwork.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="">
     <meta name="twitter:title" content="GetRunning">
     <meta name="twitter:description" content="Plan running routes with a click of a button.">
     <meta name="twitter:creator" content="@_reubn">
-    <meta name="twitter:image:src" content="http://getrunning.reubn.tk/img/apple/Icon-76@2x.png">
+    <meta name="twitter:image:src" content="http://getrunning.reubn.tk/img/apple/iTunesArtwork.png">
     <meta name="twitter:domain" content="getrunning.reubn.tk">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -45,30 +44,41 @@
                 <script>var overop;</script>
 </head>
 <body>
-<div class="anim" id="googleMap"></div>
-    <div class="timedisp nsh">
-    <i class="icon-check" id="chngtd"></i>
-    <span id="time"></span>
-    </div>
-    <i id="directbut" class="icon-list nsh" onclick="showDirections()"></i>
-    <i id="abbut" class="icon-info-sign" onclick="togabout()"></i>
-    <i id="infopbut" class="icon-chevron-right centerVertical" onclick="infoptoggle()"></i>
-                <div id="over" class="centerHorizontal centerVertical">
-                <input id="location" class="overval" placeholder="Location" type="text" x-webkit-speech>
-                <input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1>
-                <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run" onclick="submit()">
-                </div>
-         <div id="infop" class="centerVertical">
-         <span id="spblock"><span id="prefix"></span><span id="routeDistance"></span></span>
-        <!-- <input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
-         <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()">
-         <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?" onclick="refreshdir()">
-         </div>
-                <div id="ab" class="nsh noop centerHorizontal centerVertical" style="">
-                <h1>Hey!</h1>
-                <img id="abim" src="">
-                <p>Description Here....</p>
-                </div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=161192677421477";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div class="anim" id="googleMap"></div>
+            <div class="timedisp nsh">
+            <i class="icon-check" id="chngtd"></i>
+            <span id="time"></span>
+            </div>
+            <i id="directbut" class="icon-list nsh" onclick="showDirections()"></i>
+            <i id="abbut" class="icon-info-sign" onclick="togabout()"></i>
+            <i id="infopbut" class="icon-chevron-right centerVertical" onclick="infoptoggle()"></i>
+                        <div id="over" class="centerHorizontal centerVertical">
+                        <input id="location" class="overval" placeholder="Location" type="text" x-webkit-speech>
+                        <input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1>
+                        <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run" onclick="submit()">
+                        </div>
+                 <div id="infop" class="centerVertical">
+                 <span id="spblock"><span id="prefix"></span><span id="routeDistance"></span></span>
+                <!-- <input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
+                 <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()">
+                 <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?" onclick="refreshdir()">
+                 </div>
+                        <div id="ab" class="nsh noop centerHorizontal centerVertical" style="">
+                        <h1>Hey!</h1>
+                        <img id="abim" src="">
+                        <p>Description Here....</p>
+                        <div id="social"><div class="fb-like" data-href="http://getrunning.reubn.tk" data-width="55" data-show-faces="false" data-send="false"></div><a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-hashtags="getrunningapp">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><div class="g-plusone" data-size="medium" data-annotation="inline" data-width="120"></div>
+</div>
+                        </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="vendor/js/bootstrap.min.js"></script>
@@ -128,5 +138,14 @@
  });
  });
  </script>
+ <script type="text/javascript">
+  window.___gcfg = {lang: 'en-GB'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
 </body>
 </html>
