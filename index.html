@@ -44,30 +44,39 @@
                 <script>var overop;</script>
 </head>
 <body>
-<div class="anim" id="googleMap"></div>
-    <div class="timedisp nsh">
-    <i class="icon-check" id="chngtd"></i>
-    <span id="time"></span>
-    </div>
-    <i id="directbut" class="icon-list nsh" onclick="showDirections()"></i>
-    <i id="abbut" class="icon-info-sign" onclick="togabout()"></i>
-    <i id="infopbut" class="icon-chevron-right centerVertical" onclick="infoptoggle()"></i>
-                <div id="over" class="centerHorizontal centerVertical">
-                <input id="location" class="overval" placeholder="Location" type="text" x-webkit-speech>
-                <input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1>
-                <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run" onclick="submit()">
-                </div>
-         <div id="infop" class="centerVertical">
-         <span id="spblock"><span id="prefix"></span><span id="routeDistance"></span></span>
-        <!-- <input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
-         <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()">
-         <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?" onclick="refreshdir()">
-         </div>
-                <div id="ab" class="nsh noop centerHorizontal centerVertical" style="">
-                <h1>Hey!</h1>
-                <img id="abim" src="">
-                <p>Description Here....</p>
-                </div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=161192677421477";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div class="anim" id="googleMap"></div>
+            <div class="timedisp nsh">
+            <i class="icon-check" id="chngtd"></i>
+            <span id="time"></span>
+            </div>
+            <i id="directbut" class="icon-list nsh" onclick="showDirections()"></i>
+            <i id="abbut" class="icon-info-sign" onclick="togabout()"></i>
+            <i id="infopbut" class="icon-chevron-right centerVertical" onclick="infoptoggle()"></i>
+                        <div id="over" class="centerHorizontal centerVertical">
+                        <input id="location" class="overval" placeholder="Location" type="text" x-webkit-speech>
+                        <input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1>
+                        <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run" onclick="submit()">
+                        </div>
+                 <div id="infop" class="centerVertical">
+                 <span id="spblock"><span id="prefix"></span><span id="routeDistance"></span></span>
+                <!-- <input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
+                 <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()">
+                 <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?" onclick="refreshdir()">
+                 </div>
+                        <div id="ab" class="nsh noop centerHorizontal centerVertical" style="">
+                        <h1>Hey!</h1>
+                        <img id="abim" src="">
+                        <p>Description Here....</p>
+                        <div id="social"><div class="fb-like" data-href="http://getrunning.reubn.tk" data-width="55" data-show-faces="false" data-send="false"></div></div>
+                        </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/script.min.js"></script>
 <script type="text/javascript" src="vendor/js/bootstrap.min.js"></script>
