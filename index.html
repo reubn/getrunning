@@ -90,7 +90,7 @@
  
 }
 // AutoComplete
- $(function() {
+$(function() {
  
  $( "#location" ).autocomplete({
  open: function() {
@@ -110,10 +110,12 @@
  },
  
  data: {
- featureClass: "P",
- style: "full",
- maxRows: 5,
- name_startsWith: request.term
+ maxRows: 3,
+ name_startsWith: request.term,
+ isNameRequired: true,
+ countryBias: 'UK',
+ featureClass: 'P'
+ 
  },
  success: function( data ) {
  response( $.map( data.geonames, function( item ) {
@@ -127,6 +129,8 @@
  }
  });
  });
- </script>
+
+</script>
+<script type="text/javascript" src="vendor/js/FastActive.min.js"></script>
 </body>
 </html>
