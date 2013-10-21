@@ -7,6 +7,8 @@ function togabout() {
     Midway();
 }
 $('#infopbut').addClass('nsh');
+var pastpr;
+pastpr = 0;
 var maplat;
 var maplon;
 maplat = 52.056398;
@@ -85,6 +87,7 @@ function buttoggle() {
 }
 //Ini
 function initialize(lata, lona, usegeo) {
+    if(pastpr === 0){
     if (usegeo == true) {
         document.getElementById("location").value = lata + " , " + lona;
         document.getElementById("location").placeholder = "Your Current Location!";
@@ -153,6 +156,7 @@ function initialize(lata, lona, usegeo) {
 
     });
 }
+}
 //Get New Directions
 function refreshdir() {
     submit();
@@ -160,6 +164,7 @@ function refreshdir() {
 }
 
 function submit() {
+    pastpr = 1;
     var location = document.getElementById("location").value;
     //reason=[0, 0, 0, 0, 0, 0];
     clearMarkers(); //only necessary if already showing map
