@@ -152,23 +152,6 @@ body {
   margin-top: 5px !important;
 }
 
-.btn-pink {
-  -webkit-font-smoothing: antialiased;
-  color: #fff !important;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.23);
-  background-color: #d10076 !important;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#ff199b), to(#d10076));
-  background-image: -moz-linear-gradient(top, #ff199b, #d10076);
-  background-image: -ms-linear-gradient(top, #ff199b, #d10076);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff199b), color-stop(100%, #d10076));
-  background-image: -webkit-linear-gradient(top, #ff199b, #d10076);
-  background-image: -o-linear-gradient(top, #ff199b, #d10076);
-  background-image: linear-gradient(#ff199b, #d10076);
-  background-repeat: repeat-x;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff199b", endColorstr="#d10076");
-}
-
 .btn-danger {
   background-color: #ff6543!important;
     -webkit-transition: background-color 1.5s !important;
@@ -181,6 +164,8 @@ body {
 
 .btn.btn-whist {
   background-color: #FF2A68;
+    -webkit-transition: all 3s !important;
+  transition: all 3s !important;
 }
 
 .btn.btn-whist:hover,
