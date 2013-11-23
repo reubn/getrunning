@@ -2,16 +2,17 @@
 <!--Uses code from https://github.com/ben-eysenbach/run_map-->
 <!-- <html manifest="cache.appcache"> -->
 <html>
+
 <head>
-            <link rel="dns-prefetch" href="//reubn.tk">
-            <link rel="dns-prefetch" href="//fonts.googleapis.com">
-            <link rel="dns-prefetch" href="//ajax.googleapis.com">
-            <link rel="dns-prefetch" href="//maps.googleapis.com">
-            <link rel="dns-prefetch" href="//ws.geonames.org">
+    <link rel="dns-prefetch" href="//reubn.tk">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//ajax.googleapis.com">
+    <link rel="dns-prefetch" href="//maps.googleapis.com">
+    <link rel="dns-prefetch" href="//ws.geonames.org">
     <title>GetRunning</title>
     <meta property="og:title" content="GetRunning" />
     <meta property="og:description" content="Plan running routes with a click of a button." />
-    <meta property='og:locale' content='en_GB'/>
+    <meta property='og:locale' content='en_GB' />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://getrunning.reubn.tk" />
     <meta property="og:image" content="http://getrunning.reubn.tk/img/apple/iTunesArtwork.png" />
@@ -23,125 +24,138 @@
     <meta name="twitter:creator" content="@_reubn">
     <meta name="twitter:image:src" content="http://getrunning.reubn.tk/img/apple/iTunesArtwork.png">
     <meta name="twitter:domain" content="getrunning.reubn.tk">
-<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="vendor/css/jquery-ui-1.10.3.custom.min.css" /> <!-- Style -->
-<link href="vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="vendor/css/animate.min.css" rel="stylesheet" type="text/css">
-<link href="vendor/css/flat-ui.css" rel="stylesheet" type="text/css"> 
-<link href="css/style.css" rel="stylesheet" type="text/css">
-            <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
-            <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
-            <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
-            <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
-            <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png" />
-            <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
-            <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
-            <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
-            <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
-            <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
-            <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-            <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160" />
-            <meta name="msapplication-TileColor" content="#fefefe" />
-            <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
-            <meta name="msapplication-square70x70logo" content="/mstile-70x70.png" />
-            <meta name="msapplication-square150x150logo" content="/mstile-150x150.png" />
-            <meta name="msapplication-wide310x150logo" content="/mstile-310x150.png" />
-            <meta name="msapplication-square310x310logo" content="/mstile-310x310.png" />
-            
-                <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAue8HUBWPfP9K6blbupxpEYHCj98VnWi0&sensor=false"></script>
-                <script>var overop;</script>
-</head>
-<body>
-        <div class="anim" id="googleMap"></div>
-            <div class="timedisp nsh">
-            <i class="icon-check" id="chngtd"></i>
-            <span id="time"></span>
-            </div>
-            <i id="directbut" class="icon-list nsh" onclick="showDirections()"></i>
-            <i id="abbut" class="icon-info-sign" onclick="togabout()"></i>
-            <i id="infopbut" class="icon-chevron-right centerVertical" onclick="infoptoggle()"></i>
-                        <div id="over" class="centerHorizontal centerVertical">
-                        <input id="location" class="overval" placeholder="Location" type="text" x-webkit-speech>
-                        <input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1>
-                        <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run" onclick="submit()">
-                        </div>
-                 <div id="infop" class="centerVertical">
-                 <span id="spblock"><span id="prefix"></span><span id="routeDistance"></span></span>
-                <!-- <input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
-                 <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()">
-                 <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?" onclick="refreshdir()">
-                 </div>
-                        <div id="ab" class="nsh noop centerHorizontal centerVertical" style="">
-                        <h1>Hey!</h1>
-                        <img id="abim" src="">
-                        <p>Description Here....</p>
-                        <div id="social">
-                        </div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<script type="text/javascript" src="vendor/js/bootstrap.min.js"></script>
-<script src="vendor/js/jquery-ui-1.10.3.custom.min.js"></script>
-<script type="text/javascript" src="js/midway.min.js"></script>
-<script>
- $('#subit').click(function() {
- overop = 1;
- });
- 
- function overtoggle() {
- $('#googleMap').css({"-webkit-filter" : "blur(0)"})
- $('#googleMap').css({"filter" : "blur()"})
-//$('#over').css({"opacity" : "0"})
- $('#over').addClass("hide");
- setTimeout(function () {
- $('#over').css({"display" : "none"})
- }, 600);
- 
-}
-// AutoComplete
-$(function() {
- 
- $( "#location" ).autocomplete({
- open: function() {
- $('#location').css('border-bottom-left-radius', "0px");
- $('#location').css('border-bottom-right-radius', "0px");
- },
- close: function() {
- $('#location').css('border-bottom-left-radius', "6px");
- $('#location').css('border-bottom-right-radius', "6px");
- },
- source: function( request, response ) {
- $.ajax({
- url: "http://ws.geonames.org/searchJSON",
- dataType: "jsonp",
- search: function(){
- //$ulForResults.empty();
- },
- 
- data: {
- maxRows: 3,
- name_startsWith: request.term,
- isNameRequired: true,
- countryBias: 'UK',
- featureClass: 'P'
- 
- },
- success: function( data ) {
- response( $.map( data.geonames, function( item ) {
- return {
- label: item.name + (item.adminName1 ? ", " + item.adminName1 : ""),
- value: item.name + (item.adminName1 ? ", " + item.adminName1 : "")
- }
- }));
- }
- });
- }
- });
- });
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="vendor/css/jquery-ui-1.10.3.custom.min.css" />
+    <!-- Style -->
+    <link href="vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/css/flat-ui.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160" />
+    <meta name="msapplication-TileColor" content="#fefefe" />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="/mstile-310x310.png" />
 
-</script>
-<script type="text/javascript" src="vendor/js/FastActive.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAue8HUBWPfP9K6blbupxpEYHCj98VnWi0&sensor=false"></script>
+    <script>
+        var overop;
+    </script>
+</head>
+
+<body>
+    <div class="anim" id="googleMap"></div>
+    <div class="timedisp nsh">
+        <i class="icon-check" id="chngtd"></i>
+        <span id="time"></span>
+    </div>
+    <i id="directbut" class="icon-list nsh" onclick="showDirections()"></i>
+    <i id="abbut" class="icon-info-sign" onclick="togabout()"></i>
+    <i id="infopbut" class="icon-chevron-right centerVertical" onclick="infoptoggle()"></i>
+    <div id="over" class="centerHorizontal centerVertical">
+        <input id="location" class="overval" placeholder="Location" type="text" x-webkit-speech>
+        <input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1>
+        <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run" onclick="submit()">
+    </div>
+    <div id="infop" class="centerVertical">
+        <span id="spblock">
+            <span id="prefix"></span>
+            <span id="routeDistance"></span>
+        </span>
+        <!-- <input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
+        <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()">
+        <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?" onclick="refreshdir()">
+    </div>
+    <div id="ab" class="nsh noop centerHorizontal centerVertical" style="">
+        <h1>Hey!</h1>
+        <img id="abim" src="">
+        <p>Description Here....</p>
+        <div id="social">
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="vendor/js/bootstrap.min.js"></script>
+        <script src="vendor/js/jquery-ui-1.10.3.custom.min.js"></script>
+        <script type="text/javascript" src="js/midway.min.js"></script>
+        <script>
+            $('#subit').click(function() {
+                overop = 1;
+            });
+
+            function overtoggle() {
+                $('#googleMap').css({
+                    "-webkit-filter": "blur(0)"
+                })
+                $('#googleMap').css({
+                    "filter": "blur()"
+                })
+                //$('#over').css({"opacity" : "0"})
+                $('#over').addClass("hide");
+                setTimeout(function() {
+                    $('#over').css({
+                        "display": "none"
+                    })
+                }, 600);
+
+            }
+             // AutoComplete
+            $(function() {
+
+                $("#location").autocomplete({
+                    open: function() {
+                        $('#location').css('border-bottom-left-radius', "0px");
+                        $('#location').css('border-bottom-right-radius', "0px");
+                    },
+                    close: function() {
+                        $('#location').css('border-bottom-left-radius', "6px");
+                        $('#location').css('border-bottom-right-radius', "6px");
+                    },
+                    source: function(request, response) {
+                        $.ajax({
+                            url: "http://ws.geonames.org/searchJSON",
+                            dataType: "jsonp",
+                            search: function() {
+                                //$ulForResults.empty();
+                            },
+
+                            data: {
+                                maxRows: 3,
+                                name_startsWith: request.term,
+                                isNameRequired: true,
+                                countryBias: 'UK',
+                                featureClass: 'P'
+
+                            },
+                            success: function(data) {
+                                response($.map(data.geonames, function(item) {
+                                    return {
+                                        label: item.name + (item.adminName1 ? ", " + item.adminName1 : ""),
+                                        value: item.name + (item.adminName1 ? ", " + item.adminName1 : "")
+                                    }
+                                }));
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+        <script type="text/javascript" src="vendor/js/FastActive.min.js"></script>
 </body>
+
 </html>

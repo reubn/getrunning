@@ -87,75 +87,85 @@ function buttoggle() {
 }
 //Ini
 function initialize(lata, lona, usegeo) {
-    if(pastpr === 0){
-    if (usegeo == true) {
-        document.getElementById("location").value = lata + " , " + lona;
-        document.getElementById("location").placeholder = "Your Current Location!";
-    }
-    var gmstyles = [
-	{
-		featureType: 'landscape',
-		elementType: 'geometry',
-		stylers: [
-			{ hue: '#f9f5f1' },
-			{ saturation: 18 },
-			{ lightness: 64 },
-			{ visibility: 'on' }
-		]
-	}
-];
-    var mapProp = {
-        center: new google.maps.LatLng(maplat, maplon),
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        disableDefaultUI: true,
-        panControl: false,
-        zoomControl: false,
-        mapTypeControl: true,
-        scaleControl: false,
-        streetViewControl: false,
-        overviewMapControl: false
-    };
-    var polylineOptions = new google.maps.Polyline({
-        strokeColor: 'rgba(142, 68, 173, 0.65)',
-        strokeOpacity: 0.65,
-        strokeWeight: 6
-    });
-    directionsDisplay = new google.maps.DirectionsRenderer({
-        draggable: false
-    });
-    
-
-
-    map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-    directionsDisplay.setMap(map);
-    map.setOptions({styles: gmstyles});
-    google.maps.event.addListener(directionsDisplay, 'directions_changed', function () {
-        routeDist = Math.round(directionsDisplay.directions.routes[0].legs[0].distance.value / 100) /10 + " km";
-        routecoords = directionsDisplay.directions.routes[0].overview_path;
-        var disttb = document.getElementById("distance").value;
-        var routeADist = Math.round(directionsDisplay.directions.routes[0].legs[0].distance.value / 100) * 0.1;
-        document.getElementById("routeDistance").innerHTML = routeDist + " long.";
-        routeTimeW = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value / 5632.7);
-        routeTimeR = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value / 11070.1);
-        routeTimeC = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value / 20358.8);
-        $('#time').text("R " + routeTimeR + " C " + routeTimeC + " W " + routeTimeW)
-        if (routeADist > disttb) {
-            //More To Run
-            $('#prefix').text("Unlucky. Your route came out a tad longer mate. It's ");
-        } else if (routeADist < disttb) {
-            //Less To Run
-            $('#prefix').text("Lucky. Your route came out shorter then expected. It's ");
-        } else if (routeADist == disttb) {
-            //Same
-            $('#prefix').text("BOOM. Bang on! It's ");;
+    if (pastpr === 0) {
+        if (usegeo == true) {
+            document.getElementById("location").value = lata + " , " + lona;
+            document.getElementById("location").placeholder = "Your Current Location!";
         }
+        var gmstyles = [
+            {
+                featureType: 'landscape',
+                elementType: 'geometry',
+                stylers: [
+                    {
+                        hue: '#f9f5f1'
+                    },
+                    {
+                        saturation: 18
+                    },
+                    {
+                        lightness: 64
+                    },
+                    {
+                        visibility: 'on'
+                    }
+  ]
+ }
+];
+        var mapProp = {
+            center: new google.maps.LatLng(maplat, maplon),
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true,
+            panControl: false,
+            zoomControl: false,
+            mapTypeControl: true,
+            scaleControl: false,
+            streetViewControl: false,
+            overviewMapControl: false
+        };
+        var polylineOptions = new google.maps.Polyline({
+            strokeColor: 'rgba(142, 68, 173, 0.65)',
+            strokeOpacity: 0.65,
+            strokeWeight: 6
+        });
+        directionsDisplay = new google.maps.DirectionsRenderer({
+            draggable: false
+        });
+
+
+
+        map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        directionsDisplay.setMap(map);
+        map.setOptions({
+            styles: gmstyles
+        });
+        google.maps.event.addListener(directionsDisplay, 'directions_changed', function () {
+            routeDist = Math.round(directionsDisplay.directions.routes[0].legs[0].distance.value / 100) / 10 + " km";
+            routecoords = directionsDisplay.directions.routes[0].overview_path;
+            var disttb = document.getElementById("distance").value;
+            var routeADist = Math.round(directionsDisplay.directions.routes[0].legs[0].distance.value / 100) * 0.1;
+            document.getElementById("routeDistance").innerHTML = routeDist + " long.";
+            routeTimeW = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value / 5632.7);
+            routeTimeR = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value / 11070.1);
+            routeTimeC = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value / 20358.8);
+            $('#time').text("R " + routeTimeR + " C " + routeTimeC + " W " + routeTimeW)
+            if (routeADist > disttb) {
+                //More To Run
+                $('#prefix').text("Unlucky. Your route came out a tad longer mate. It's ");
+            } else if (routeADist < disttb) {
+                //Less To Run
+                $('#prefix').text("Lucky. Your route came out shorter then expected. It's ");
+            } else if (routeADist == disttb) {
+                //Same
+                $('#prefix').text("BOOM. Bang on! It's ");;
+            }
 
 
 
 
-    });
-}
+        });
+    }
 }
 //Get New Directions
 function refreshdir() {
