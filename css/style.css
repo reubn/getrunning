@@ -5,6 +5,54 @@
 *:focus {
     outline: 0;
 }
+input{
+text-transform:capitalize;
+}
+.midway-vertical,
+.midway-horizontal {
+  display: none;
+}
+footer {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+line-height: 60px;
+}
+footer > a{
+color:#232323!important;
+text-decoration:none!important;
+}
+.about {
+position: absolute;
+left: -30px;
+bottom: 14px;
+height: 30px;
+z-index: 1000;
+width:200px;
+transform: scale(0.5);
+-ms-transform: scale(0.5); /* IE 9 */
+-webkit-transform: scale(0.5); /* Safari and Chrome */
+}
+.about:hover{
+left: 15px;
+bottom: 15px;
+height: 60px;
+z-index: 1000;
+width:200px;
+transform: scale(1);
+-ms-transform: scale(1); /* IE 9 */
+-webkit-transform: scale(1); /* Safari and Chrome */
+}
+.pp{
+border-radius:50%!important;
+height:50px;
+width:50px;
+margin-right: 2%;
+border: 2px solid #fff;
+-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
 html {
     height: 100%;
 }
@@ -117,8 +165,6 @@ body {
     border-top-right-radius: 0!important;
     border-top-left-radius: 0!important;
     -webkit-transition: 0!important;
-    -moz-transition: 0!important;
-    -o-transition: 0!important;
     transition: 0!important;
 }
 .infout {
@@ -210,42 +256,19 @@ body {
 }
 #over {
     -webkit-animation: poopin .6s;
-    -moz-animation: poopin .6s;
     animation: poopin .6s;
 }
 @-webkit-keyframes poopin {
     50% {
         opacity: 0;
         -webkit-transform: scale(0) translateZ(0);
-        -moz-transform: scale(0) translateZ(0);
         -ms-transform: scale(0) translateZ(0);
-        -o-transform: scale(0) translateZ(0);
         transform: scale(0) translateZ(0);
     }
     to {
         opacity: 1;
         -webkit-transform: scale(1) translateZ(0);
-        -moz-transform: scale(1) translateZ(0);
         -ms-transform: scale(1) translateZ(0);
-        -o-transform: scale(1) translateZ(0);
-        transform: scale(1) translateZ(0);
-    }
-}
-@-moz-keyframes poopin {
-    50% {
-        opacity: 0;
-        -webkit-transform: scale(0) translateZ(0);
-        -moz-transform: scale(0) translateZ(0);
-        -ms-transform: scale(0) translateZ(0);
-        -o-transform: scale(0) translateZ(0);
-        transform: scale(0) translateZ(0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: scale(1) translateZ(0);
-        -moz-transform: scale(1) translateZ(0);
-        -ms-transform: scale(1) translateZ(0);
-        -o-transform: scale(1) translateZ(0);
         transform: scale(1) translateZ(0);
     }
 }
@@ -253,17 +276,13 @@ body {
     50% {
         opacity: 0;
         -webkit-transform: scale(0) translateZ(0);
-        -moz-transform: scale(0) translateZ(0);
         -ms-transform: scale(0) translateZ(0);
-        -o-transform: scale(0) translateZ(0);
         transform: scale(0) translateZ(0);
     }
     to {
         opacity: 1;
         -webkit-transform: scale(1) translateZ(0);
-        -moz-transform: scale(1) translateZ(0);
         -ms-transform: scale(1) translateZ(0);
-        -o-transform: scale(1) translateZ(0);
         transform: scale(1) translateZ(0);
     }
 }
@@ -271,35 +290,13 @@ body {
     from {
         opacity: 1;
         -webkit-transform: scale(1) translateZ(0);
-        -moz-transform: scale(1) translateZ(0);
         -ms-transform: scale(1) translateZ(0);
-        -o-transform: scale(1) translateZ(0);
         transform: scale(1) translateZ(0);
     }
     100% {
         opacity: 0!important;
         -webkit-transform: scale(0) translateZ(0);
-        -moz-transform: scale(0) translateZ(0);
         -ms-transform: scale(0) translateZ(0);
-        -o-transform: scale(0) translateZ(0);
-        transform: scale(0) translateZ(0);
-    }
-}
-@-moz-keyframes poopout {
-    from {
-        opacity: 1;
-        -webkit-transform: scale(1) translateZ(0);
-        -moz-transform: scale(1) translateZ(0);
-        -ms-transform: scale(1) translateZ(0);
-        -o-transform: scale(1) translateZ(0);
-        transform: scale(1) translateZ(0);
-    }
-    100% {
-        opacity: 0!important;
-        -webkit-transform: scale(0) translateZ(0);
-        -moz-transform: scale(0) translateZ(0);
-        -ms-transform: scale(0) translateZ(0);
-        -o-transform: scale(0) translateZ(0);
         transform: scale(0) translateZ(0);
     }
 }
@@ -307,37 +304,33 @@ body {
     from {
         opacity: 1;
         -webkit-transform: scale(1) translateZ(0);
-        -moz-transform: scale(1) translateZ(0);
         -ms-transform: scale(1) translateZ(0);
-        -o-transform: scale(1) translateZ(0);
         transform: scale(1) translateZ(0);
     }
     100% {
         opacity: 0!important;
         -webkit-transform: scale(0) translateZ(0);
-        -moz-transform: scale(0) translateZ(0);
         -ms-transform: scale(0) translateZ(0);
-        -o-transform: scale(0) translateZ(0);
         transform: scale(0) translateZ(0);
     }
 }
 .hide {
     -webkit-animation-duration: 0.5s!important;
-    -moz-animation-duration: 0.5s!important;
     animation-duration: 0.5s!important;
     -webkit-animation-name: poopout!important;
-    -moz-animation-name: poopout!important;
     animation-name: poopout!important;
     -webkit-animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important;
-    -moz-animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important;
     animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important;
     -webkit-animation-fill-mode: forwards!important;
-    -moz-animation-fill-mode: forwards!important;
     animation-fill-mode: forwards!important;
 }
 /*Phone Port*/
 
 @media only screen and (max-width: 480px) {
+    *:not(#infop){
+        transition:none!important;
+        animation:none!important;
+    }
     #over {
         width: 65%;
     }
@@ -375,6 +368,10 @@ body {
 /*Phone Land*/
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
+        *:not(#infop){
+        transition:none!important;
+        animation:none!important;
+    }
     .overval {
         width: 96%!important;
     }
