@@ -54,9 +54,6 @@
     <meta name="msapplication-square310x310logo" content="/mstile-310x310.png" />
 
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAue8HUBWPfP9K6blbupxpEYHCj98VnWi0&sensor=false"></script>
-    <script>
-        var overop;
-    </script>
 </head>
 
 <body>
@@ -65,13 +62,13 @@
         <i class="icon-check" id="chngtd"></i>
         <span id="time"></span>
     </div>
-    <i id="directbut" class="icon-list nsh" onclick="showDirections()"></i>
-    <i id="abbut" class="icon-info-sign" onclick="togabout()"></i>
-    <i id="infopbut" class="icon-chevron-right centerVertical" onclick="infoptoggle()"></i>
+    <i id="directbut" class="icon-list nsh"></i>
+    <i id="abbut" class="icon-info-sign"></i>
+    <i id="infopbut" class="icon-chevron-right centerVertical"></i>
     <div id="over" class="centerHorizontal centerVertical">
         <input id="location" class="overval" placeholder="Location" type="text" x-webkit-speech>
         <input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1>
-        <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run" onclick="submit()">
+        <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run">
     </div>
     <div id="infop" class="centerVertical">
         <span id="spblock">
@@ -79,8 +76,8 @@
             <span id="routeDistance"></span>
         </span>
         <!-- <input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
-        <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok" onclick="infoptoggle()">
-        <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?" onclick="refreshdir()">
+        <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok">
+        <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?">
     </div>
     <div id="ab" class="nsh noop centerHorizontal centerVertical" style="">
         <h1>Hey!</h1>
@@ -89,72 +86,10 @@
         <div id="social">
         </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="vendor/js/bootstrap.min.js"></script>
         <script src="vendor/js/jquery-ui-1.10.3.custom.min.js"></script>
         <script type="text/javascript" src="js/midway.min.js"></script>
-        <script>
-            $('#subit').click(function() {
-                overop = 1;
-            });
-
-            function overtoggle() {
-                $('#googleMap').css({
-                    "-webkit-filter": "blur(0)"
-                })
-                $('#googleMap').css({
-                    "filter": "blur()"
-                })
-                //$('#over').css({"opacity" : "0"})
-                $('#over').addClass("hide");
-                setTimeout(function() {
-                    $('#over').css({
-                        "display": "none"
-                    })
-                }, 600);
-
-            }
-             // AutoComplete
-            $(function() {
-
-                $("#location").autocomplete({
-                    open: function() {
-                        $('#location').css('border-bottom-left-radius', "0px");
-                        $('#location').css('border-bottom-right-radius', "0px");
-                    },
-                    close: function() {
-                        $('#location').css('border-bottom-left-radius', "6px");
-                        $('#location').css('border-bottom-right-radius', "6px");
-                    },
-                    source: function(request, response) {
-                        $.ajax({
-                            url: "http://ws.geonames.org/searchJSON",
-                            dataType: "jsonp",
-                            search: function() {
-                                //$ulForResults.empty();
-                            },
-
-                            data: {
-                                maxRows: 3,
-                                name_startsWith: request.term,
-                                isNameRequired: true,
-                                countryBias: 'UK',
-                                featureClass: 'P'
-
-                            },
-                            success: function(data) {
-                                response($.map(data.geonames, function(item) {
-                                    return {
-                                        label: item.name + (item.adminName1 ? ", " + item.adminName1 : ""),
-                                        value: item.name + (item.adminName1 ? ", " + item.adminName1 : "")
-                                    }
-                                }));
-                            }
-                        });
-                    }
-                });
-            });
-        </script>
+        <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="vendor/js/FastActive.min.js"></script>
 </body>
 
