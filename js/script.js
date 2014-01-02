@@ -21,16 +21,16 @@
  function overtoggle() {
      $('#googleMap').css({
          "-webkit-filter": "blur(0)"
-     })
+     });
      $('#googleMap').css({
          "filter": "blur()"
-     })
+     });
      //$('#over').css({"opacity" : "0"})
      $('#over').addClass("hide");
      setTimeout(function () {
          $('#over').css({
              "display": "none"
-         })
+         });
      }, 600);
 
  }
@@ -67,7 +67,7 @@
                          return {
                              label: item.name + (item.adminName1 ? ", " + item.adminName1 : ""),
                              value: item.name + (item.adminName1 ? ", " + item.adminName1 : "")
-                         }
+                         };
                      }));
                  }
              });
@@ -95,7 +95,17 @@
  //Dev
  var yes = "https://github.com/reubn/getrunning";
  var no = "Forever alone";
- console.log('Checking up under the hood eh? Well yes or no?');
+ console.log('Checking up under the hood eh?');
+ $('input').on('keypress', function (event) {
+     var $this = $(this),
+         val = $this.val();
+
+     val = val.toLowerCase().replace(/\b[a-z]/, function (letter) {
+         return letter.toUpperCase();
+     });
+     console.log(val);
+     $this.val(val);
+ });
 
  function convertToHHMM(info) {
      var hrs = parseInt(Number(info));
@@ -124,7 +134,7 @@
          initialize("", "", false);
      }
 
- }
+ };
  // Enable the visual refresh
  google.maps.visualRefresh = true;
  var routeTimeW;
@@ -164,7 +174,7 @@
  //Ini
  function initialize(lata, lona, usegeo) {
      if (pastpr === 0) {
-         if (usegeo == true) {
+         if (usegeo === true) {
              document.getElementById("location").value = lata + " , " + lona;
              document.getElementById("location").placeholder = "Your Current Location!";
          }
@@ -225,7 +235,7 @@
              routeTimeW = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value / 5632.7);
              routeTimeR = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value / 11070.1);
              routeTimeC = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value / 20358.8);
-             $('#time').text("R " + routeTimeR + " C " + routeTimeC + " W " + routeTimeW)
+             $('#time').text("R " + routeTimeR + " C " + routeTimeC + " W " + routeTimeW);
              if (routeADist > disttb) {
                  //More To Run
                  $('#prefix').text("Unlucky. Your route came out a tad longer mate. It's ");
@@ -473,8 +483,8 @@
      }
 
      var routeDist = document.getElementById("routeDistance").innerHTML;
-     var footer = "\<br\>\<br\>Total: " + routeDist + "\</body\>";
-     openWindow.document.write(header + instructions.join("\<br\>") + footer);
+     var footer = "<br\><br\>Total: " + routeDist + "</body\>";
+     openWindow.document.write(header + instructions.join("<br\>") + footer);
      openWindow.focus();
  }
 
@@ -523,7 +533,7 @@
      LatLng2 = steps[bestStep1].end_location;
      LatLng3 = steps[bestStep2].end_location;
      smooth_bool = true;
-     if (a == 0 && b == 0) {
+     if (a === 0 && b === 0) {
          return true; //ok to move on
      } else {
          return false; //need to plotRoute again
