@@ -158,7 +158,7 @@ function initialize(lata, lona, usegeo) {
                 $('#prefix').text("Lucky. Your route came out shorter then expected. It's ");
             } else if (routeADist == disttb) {
                 //Same
-                $('#prefix').text("BOOM. Bang on! It's ");;
+                $('#prefix').text("BOOM. Bang on! It's ");
             }
 
 
