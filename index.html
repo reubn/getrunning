@@ -57,27 +57,31 @@
 </head>
 
 <body>
-    <div class="anim" id="googleMap"></div>
-    <div class="timedisp nsh">
-        <i class="icon-check" id="chngtd"></i>
-        <span id="time"></span>
-    </div>
-    <i id="directbut" class="icon-list nsh"></i>
-    <i id="abbut" class="icon-info-sign"></i>
-    <i id="infopbut" class="icon-chevron-right centerVertical"></i>
+    <div class="anim" id="googleMap" style=""></div>
     <div id="over" class="centerHorizontal centerVertical">
         <input id="location" class="overval" placeholder="Location" type="text" x-webkit-speech>
         <input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1>
         <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run">
     </div>
     <div id="infop" class="centerVertical">
-        <span id="spblock">
-            <span id="prefix"></span>
-            <span id="routeDistance"></span>
-        </span>
-        <!-- <input id="directions" class="btn btn-block" type="button" value="Walkthrough">-->
-        <input id="closeinfop" class="btn-infop btn btn-block btn-large btn-info" type="button" value="Ok">
-        <input id="refreshbut" class="btn-infop btn btn-block btn-large btn-success" type="button" value="New Route?">
+        <span id="routeDistance"></span>
+        <hr/>
+
+
+<span class="timecont">
+		<span class="time"><span class="glyphicon glyphicon-running" id="chngtd" ></span>&nbsp; <span class="running"></span></span>
+  		
+  		<span class="time"><span class="glyphicon glyphicon-walking" id="chngtd" ></span>&nbsp; <span class="walking"></span></span>
+  		
+  		<span class="time"><span class="glyphicon glyphicon-cycling" id="chngtd" ></span>&nbsp; <span class="cycling"></span></span>
+    </span>
+    
+    
+    <span id="refreshbut" class="btn btn-block btn-lg btn-success" style="
+    margin-top: 10%;
+"><span class="middle-icon glyphicon glyphicon-repeat" style="
+    color: #fff;
+"></span></span>
     </div>
     <div id="ab" class="nsh noop centerHorizontal centerVertical" style="">
         <h1>Hey!</h1>
@@ -86,10 +90,6 @@
         <div id="social">
         </div>
     </div>
-    <footer>
-        <a href="http://twitter.com/_reubn" class="about">
-            <img src="" class="pp">by <strong>@_reubn</strong></a>
-    </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="vendor/js/bootstrap.min.js"></script>
     <script src="vendor/js/jquery-ui-1.10.3.custom.min.js"></script>
