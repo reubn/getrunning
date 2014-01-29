@@ -6,7 +6,7 @@
 *:focus {
     outline: 0;
 }
-*:not(.glyphicon){
+*:not(.glyphicon, #googleMap > *), #googleMap{
 -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
 }
