@@ -1,71 +1,62 @@
 var overop;
-$('#routeDistance').click(function () {
-    showDirections();
+$("#routeDistance").click(function () {
+    showDirections()
 });
-$('#subit').click(function () {
-    submit();
+$("#subit").click(function () {
+    submit()
 });
-$('#refreshbut').click(function () {
-    refreshdir();
+$("#refreshbut").click(function () {
+    refreshdir()
 });
 
 function overtoggle() {
-    $('#googleMap').css({
+    $("#googleMap").css({
         "-webkit-filter": "blur(0)"
     });
-    $('#googleMap').css({
-        "filter": "blur()"
+    $("#googleMap").css({
+        filter: "blur()"
     });
-    //$('#over').css({"opacity" : "0"})
-    $('#over').addClass("hide");
+    $("#over").addClass("hide");
     setTimeout(function () {
-        $('#over').css({
-            "display": "none"
-        });
-    }, 600);
-
+        $("#over").css({
+            display: "none"
+        })
+    }, 600)
 }
-// AutoComplete
 $(function () {
-
     $("#location").autocomplete({
         open: function () {
-            $('#location').css('border-bottom-left-radius', "0px");
-            $('#location').css('border-bottom-right-radius', "0px");
+            $("#location").css("border-bottom-left-radius", "0px");
+            $("#location").css("border-bottom-right-radius", "0px")
         },
         close: function () {
-            $('#location').css('border-bottom-left-radius', "6px");
-            $('#location').css('border-bottom-right-radius', "6px");
+            $("#location").css("border-bottom-left-radius", "6px");
+            $("#location").css("border-bottom-right-radius", "6px")
         },
-        source: function (request, response) {
+        source: function (d, c) {
             $.ajax({
                 url: "http://ws.geonames.org/searchJSON",
                 dataType: "jsonp",
-                search: function () {
-                    //$ulForResults.empty();
-                },
-
+                search: function () {},
                 data: {
                     maxRows: 3,
-                    name_startsWith: request.term,
+                    name_startsWith: d.term,
                     isNameRequired: true,
-                    countryBias: 'UK',
-                    featureClass: 'P'
-
+                    countryBias: "UK",
+                    featureClass: "P"
                 },
-                success: function (data) {
-                    response($.map(data.geonames, function (item) {
+                success: function (e) {
+                    c($.map(e.geonames, function (f) {
                         return {
-                            label: item.name + (item.adminName1 ? ", " + item.adminName1 : ""),
-                            value: item.name + (item.adminName1 ? ", " + item.adminName1 : "")
-                        };
-                    }));
+                            label: f.name + (f.adminName1 ? ", " + f.adminName1 : ""),
+                            value: f.name + (f.adminName1 ? ", " + f.adminName1 : "")
+                        }
+                    }))
                 }
-            });
+            })
         }
-    });
+    })
 });
-//Toggle About Panel
 var pastpr;
 pastpr = 0;
 var maplat;
@@ -74,43 +65,37 @@ maplat = 52.056398;
 maplon = -2.715974;
 var lat;
 var lon;
-
-//Dev
 var yes = "https://github.com/reubn/getrunning";
 var no = "Forever alone";
-console.log('Checking up under the hood eh?');
-function convertToHHMM(info) {
-    var hrs = parseInt(Number(info));
-    var min = Math.round((Number(info) - hrs) * 60);
-    if(min < 10){
-    var minr = "0" + min
-    }else{var minr = min;}
-    return hrs + ':' + minr;
+console.log("Checking up under the hood eh?");
+
+function convertToHHMM(f) {
+    var d = parseInt(Number(f));
+    var c = Math.round((Number(f) - d) * 60);
+    if (c < 10) {
+        var e = "0" + c
+    } else {
+        var e = c
+    }
+    return d + ":" + e
 }
 initialize("", "", false);
-//Geolocation
-window.onload = function () { // Check to see if the browser supports the GeoLocation API.
-    $('#infopbut').css("display", "none");
+window.onload = function () {
+    $("#infopbut").css("display", "none");
     if (navigator.geolocation) {
-        // Get the location
-        navigator.geolocation.getCurrentPosition(function (position) {
-            lat = position.coords.latitude;
-            lon = position.coords.longitude;
-            maplat = position.coords.latitude;
-            maplon = position.coords.longitude;
-
-            // Show the map
-            initialize(lat, lon, true);
+        navigator.geolocation.getCurrentPosition(function (c) {
+            lat = c.coords.latitude;
+            lon = c.coords.longitude;
+            maplat = c.coords.latitude;
+            maplon = c.coords.longitude;
+            initialize(lat, lon, true)
         }, function () {
-
-            initialize("", "", false);
-        });
+            initialize("", "", false)
+        })
     } else {
-        initialize("", "", false);
+        initialize("", "", false)
     }
-
 };
-// Enable the visual refresh
 google.maps.visualRefresh = true;
 var routeTimeW;
 var routeTimeR;
@@ -130,48 +115,39 @@ var LatLng3;
 var smooth_bool;
 var mode;
 var markers = [];
-$('#closeinfop').click(function () {
-    $('#infopbut').css("display", "inline");
-
+$("#closeinfop").click(function () {
+    $("#infopbut").css("display", "inline")
 });
-//Toggle Info Slide
+
 function infoptoggle() {
     $("#infop").addClass("infout");
-    $("#infop").css("left","0px");
+    $("#infop").css("left", "0px")
 }
 
-//Button Tog
 function buttoggle() {
-    $('#directbut').removeClass('nsh');
+    $("#directbut").removeClass("nsh")
 }
-//Ini
-function initialize(lata, lona, usegeo) {
+
+function initialize(h, f, g) {
     if (pastpr === 0) {
-        if (usegeo === true) {
-            document.getElementById("location").value = lata + " , " + lona;
-            document.getElementById("location").placeholder = "Your Current Location!";
+        if (g === true) {
+            document.getElementById("location").value = h + " , " + f;
+            document.getElementById("location").placeholder = "Your Current Location!"
         }
-        var gmstyles = [
-            {
-                featureType: 'landscape',
-                elementType: 'geometry',
-                stylers: [
-                    {
-                        hue: '#f9f5f1'
-                    },
-                    {
-                        saturation: 18
-                    },
-                    {
-                        lightness: 64
-                    },
-                    {
-                        visibility: 'on'
-                    }
-  ]
- }
-];
-        var mapProp = {
+        var d = [{
+            featureType: "landscape",
+            elementType: "geometry",
+            stylers: [{
+                hue: "#f9f5f1"
+            }, {
+                saturation: 18
+            }, {
+                lightness: 64
+            }, {
+                visibility: "on"
+            }]
+        }];
+        var c = {
             center: new google.maps.LatLng(maplat, maplon),
             zoom: 15,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -183,183 +159,152 @@ function initialize(lata, lona, usegeo) {
             streetViewControl: false,
             overviewMapControl: false
         };
-        var polylineOptions = new google.maps.Polyline({
-            strokeColor: 'rgba(142, 68, 173, 0.65)',
+        var e = new google.maps.Polyline({
+            strokeColor: "rgba(142, 68, 173, 0.65)",
             strokeOpacity: 0.65,
             strokeWeight: 6
         });
         directionsDisplay = new google.maps.DirectionsRenderer({
             draggable: false
         });
-
-
-
-        map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        map = new google.maps.Map(document.getElementById("googleMap"), c);
         directionsDisplay.setMap(map);
         map.setOptions({
-            styles: gmstyles
+            styles: d
         });
-        google.maps.event.addListener(directionsDisplay, 'directions_changed', function () {
+        google.maps.event.addListener(directionsDisplay, "directions_changed", function () {
             routeDist = Math.round(directionsDisplay.directions.routes[0].legs[0].distance.value / 100) / 10 + " <span class='km'>km</span>";
             routecoords = directionsDisplay.directions.routes[0].overview_path;
-            var disttb = document.getElementById("distance").value;
-            var routeADist = Math.round(directionsDisplay.directions.routes[0].legs[0].distance.value / 100) * 0.1;
+            var j = document.getElementById("distance").value;
+            var i = Math.round(directionsDisplay.directions.routes[0].legs[0].distance.value / 100) * 0.1;
             document.getElementById("routeDistance").innerHTML = routeDist;
             routeTimeW = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value / 5632.7);
             routeTimeR = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value / 11070.1);
             routeTimeC = convertToHHMM(directionsDisplay.directions.routes[0].legs[0].distance.value / 20358.8);
-            $('.running').text(routeTimeR);
-            $('.walking').text(routeTimeW);
-            $('.cycling').text(routeTimeC);
-            if (routeADist > disttb) {
-                //More To Run
-                
-            } else if (routeADist < disttb) {
-                //Less To Run
-                
-            } else if (routeADist == disttb) {
-                //Same
-                
+            $(".running").text(routeTimeR);
+            $(".walking").text(routeTimeW);
+            $(".cycling").text(routeTimeC);
+            if (i > j) {} else {
+                if (i < j) {} else {
+                    if (i == j) {}
+                }
             }
-
-
-
-
-        });
+        })
     }
 }
-//Get New Directions
+
 function refreshdir() {
     submit();
-    $("#infop").toggleClass("infout");
+    $("#infop").toggleClass("infout")
 }
 
 function submit() {
     overop = 1;
     pastpr = 1;
-    var location = document.getElementById("location").value;
-    //reason=[0, 0, 0, 0, 0, 0];
-    clearMarkers(); //only necessary if already showing map
+    var c = document.getElementById("location").value;
+    clearMarkers();
     counter = 0;
     tolerance = 0.15;
     mode = google.maps.TravelMode.WALKING;
-    var geocoder = new google.maps.Geocoder();
-    var GeoReq = {
-        address: location
+    var e = new google.maps.Geocoder();
+    var d = {
+        address: c
     };
-    geocoder.geocode(GeoReq, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK && document.getElementById("distance").value > 0.999 && document.getElementById("distance").value < 1001) {
-            var LatLng = results[0].geometry.location;
-            map.setCenter(LatLng);
-            findPts(LatLng);
+    e.geocode(d, function (g, f) {
+        if (f == google.maps.GeocoderStatus.OK && document.getElementById("distance").value > 0.999 && document.getElementById("distance").value < 1001) {
+            var h = g[0].geometry.location;
+            map.setCenter(h);
+            findPts(h);
             plotRoute();
             overtoggle();
             buttoggle();
-            console.log("EvOK");
-        } else if (status == google.maps.GeocoderStatus.OK) {
-            console.log("DisNO");
-            $("#subit").val("Sorry. There's a problem!"); //+ status);
-            $("#subit").removeClass("btn-whist");
-            $("#subit").addClass("btn-danger");
-            $("#subit").addClass("animated shake");
-            //$("#ok").css("display", "inline");
-            $("#distance").addClass("noval");
-            setTimeout(function () {
-                $("#distance").removeClass("noval");
-
-            }, 990);
-            $("#location").addClass("gdval");
-            setTimeout(function () {
-                $("#location").removeClass("gdval");
-            }, 990);
-
-            setTimeout(function () {
-                $('#subit').val("Run");
-                $("#subit").removeClass("btn-danger");
-                $("#subit").addClass("btn-whist");
-                $("#subit").removeClass("animated shake");
-            }, 1000);
-
-
-
-        } else if (document.getElementById("distance").value > 0.999 && document.getElementById("distance").value < 1001) {
-            console.log("LocNO");
-            $("#subit").val("Sorry. There's a problem!"); //+ status);
-            $("#subit").removeClass("btn-whist");
-            $("#subit").addClass("btn-danger");
-            $("#subit").addClass("animated shake");
-            //$("#ok").css("display", "inline");
-            $("#location").addClass("noval");
-            setTimeout(function () {
-                $("#location").removeClass("noval");
-            }, 990);
-            $("#distance").addClass("gdval");
-            setTimeout(function () {
-                $("#distance").removeClass("gdval");
-            }, 990);
-
-            setTimeout(function () {
-                $('#subit').val("Run");
-                $("#subit").removeClass("btn-danger");
-                $("#subit").addClass("btn-whist");
-                $("#subit").removeClass("animated shake");
-            }, 1000);
-
-
-
-
+            console.log("EvOK")
         } else {
-            console.log("NoNO");
-            $("#subit").val("Sorry. There's a problem!"); //+ status);
-            $("#subit").removeClass("btn-whist");
-            $("#subit").addClass("btn-danger");
-            $("#subit").addClass("animated shake");
-            //$("#ok").css("display", "inline");
-            $(".overval").addClass("noval");
-            setTimeout(function () {
-                $(".overval").removeClass("noval");
-            }, 990);
-
-            setTimeout(function () {
-                $('#subit').val("Run");
-                $("#subit").removeClass("btn-danger");
-                $("#subit").addClass("btn-whist");
-                $("#subit").removeClass("animated shake");
-            }, 1000);
-
-
-
-
+            if (f == google.maps.GeocoderStatus.OK) {
+                console.log("DisNO");
+                $("#subit").val("Sorry. There's a problem!");
+                $("#subit").removeClass("btn-whist");
+                $("#subit").addClass("btn-danger");
+                $("#subit").addClass("animated shake");
+                $("#distance").addClass("noval");
+                setTimeout(function () {
+                    $("#distance").removeClass("noval")
+                }, 990);
+                $("#location").addClass("gdval");
+                setTimeout(function () {
+                    $("#location").removeClass("gdval")
+                }, 990);
+                setTimeout(function () {
+                    $("#subit").val("Run");
+                    $("#subit").removeClass("btn-danger");
+                    $("#subit").addClass("btn-whist");
+                    $("#subit").removeClass("animated shake")
+                }, 1000)
+            } else {
+                if (document.getElementById("distance").value > 0.999 && document.getElementById("distance").value < 1001) {
+                    console.log("LocNO");
+                    $("#subit").val("Sorry. There's a problem!");
+                    $("#subit").removeClass("btn-whist");
+                    $("#subit").addClass("btn-danger");
+                    $("#subit").addClass("animated shake");
+                    $("#location").addClass("noval");
+                    setTimeout(function () {
+                        $("#location").removeClass("noval")
+                    }, 990);
+                    $("#distance").addClass("gdval");
+                    setTimeout(function () {
+                        $("#distance").removeClass("gdval")
+                    }, 990);
+                    setTimeout(function () {
+                        $("#subit").val("Run");
+                        $("#subit").removeClass("btn-danger");
+                        $("#subit").addClass("btn-whist");
+                        $("#subit").removeClass("animated shake")
+                    }, 1000)
+                } else {
+                    console.log("NoNO");
+                    $("#subit").val("Sorry. There's a problem!");
+                    $("#subit").removeClass("btn-whist");
+                    $("#subit").addClass("btn-danger");
+                    $("#subit").addClass("animated shake");
+                    $(".overval").addClass("noval");
+                    setTimeout(function () {
+                        $(".overval").removeClass("noval")
+                    }, 990);
+                    setTimeout(function () {
+                        $("#subit").val("Run");
+                        $("#subit").removeClass("btn-danger");
+                        $("#subit").addClass("btn-whist");
+                        $("#subit").removeClass("animated shake")
+                    }, 1000)
+                }
+            }
         }
-    });
+    })
 }
 
-function findPts(LatLng) {
-    //alert('finding points');
+function findPts(j) {
     smooth_bool = false;
-    LatLng1 = LatLng; //can't do this above because can't modify global variables in anonymous function
-    var Lat1 = LatLng1.lat() * Math.PI / 180; //LatLong in degrees; trig in radians
-    var Long1 = LatLng1.lng() * Math.PI / 180;
-    var dista = document.getElementById("distance").value * 0.609344;
-    var dist = document.getElementById("distance").value * 0.609344;
-    //var phi = Math.PI/180*((150-30)*Math.random()+30); //angle between leg1 and leg3
-    var phi = Math.PI / 180 * ((120 - 60) * Math.random() + 60); //angle between leg1 and leg3
-    var scale = 0.85; //straitline_distance/actual_distance
-    var legDist = scale * dist / (2 + 2 * Math.sin(phi / 2));
-    var r = 4000 * Math.cos(Lat1); //horizontal radius at given latitude
-    var theta = 2 * Math.random() * Math.PI;
-    var Lat2 = legDist * Math.cos(theta) / 4000 + Lat1;
-    var Long2 = Long1 + legDist * Math.sin(theta) / r;
-    var Lat3 = legDist * Math.cos(theta + phi) / 4000 + Lat1;
-    var Long3 = Long1 + legDist * Math.sin(theta + phi) / r;
-    LatLng2 = new google.maps.LatLng(Lat2 * 180 / Math.PI, Long2 * 180 / Math.PI);
-    LatLng3 = new google.maps.LatLng(Lat3 * 180 / Math.PI, Long3 * 180 / Math.PI);
+    LatLng1 = j;
+    var o = LatLng1.lat() * Math.PI / 180;
+    var i = LatLng1.lng() * Math.PI / 180;
+    var h = document.getElementById("distance").value * 0.609344;
+    var m = document.getElementById("distance").value * 0.609344;
+    var k = Math.PI / 180 * ((120 - 60) * Math.random() + 60);
+    var f = 0.85;
+    var p = f * m / (2 + 2 * Math.sin(k / 2));
+    var c = 4000 * Math.cos(o);
+    var d = 2 * Math.random() * Math.PI;
+    var n = p * Math.cos(d) / 4000 + o;
+    var g = i + p * Math.sin(d) / c;
+    var l = p * Math.cos(d + k) / 4000 + o;
+    var e = i + p * Math.sin(d + k) / c;
+    LatLng2 = new google.maps.LatLng(n * 180 / Math.PI, g * 180 / Math.PI);
+    LatLng3 = new google.maps.LatLng(l * 180 / Math.PI, e * 180 / Math.PI)
 }
-
 
 function plotRoute() {
-    //alert('plotRoute');
-    var request = {
+    var c = {
         origin: LatLng1,
         destination: LatLng1,
         waypoints: [{
@@ -373,175 +318,161 @@ function plotRoute() {
         avoidHighways: true,
         optimizeWaypoints: true
     };
-    directionsService.route(request, function (result, status) {
-        //alert(status);
-        if (status == google.maps.DirectionsStatus.OK) {
-            var routeDistFt = result.routes[0].legs[0].distance.value;
-            var distFt = 1609344 * dista; //convert to ft
-
-            if ((routeDistFt - distFt) / distFt > tolerance) { //if route is too long, try smoothing
-                //alert('too long, try smoothing');
-                if (smooth(result)) {
-                    //reason[0]+=1;
+    directionsService.route(c, function (d, f) {
+        if (f == google.maps.DirectionsStatus.OK) {
+            var e = d.routes[0].legs[0].distance.value;
+            var g = 1609344 * dista;
+            if ((e - g) / g > tolerance) {
+                if (smooth(d)) {
                     findPts(LatLng1);
-                    plotRoute();
+                    plotRoute()
                 } else {
-                    //reason[1]+=1;
-                    tolerance *= 1.1; //increase tolerance to ensure eventually will get route
-                    plotRoute();
+                    tolerance *= 1.1;
+                    plotRoute()
                 }
-            } else if ((distFt - routeDistFt) / distFt > tolerance) { //if route is too short, find new points
-                //alert('too short, finding new points');
-                //reason[2]+=1;
-                tolerance *= 1.1; //increase tolerance to ensure eventually will get route
-                findPts(LatLng1);
-                plotRoute();
-            } else if (!(smooth_bool) && !(smooth(result))) { //remove short turns at end
-                //note: won't evaluate smooth(result) of smooth_bool is true b/c JS has short circuit evaulation
-                //alert('smoothing because haven\'t before');
-                //reason[3]+=1;
-                plotRoute();
-            } else if (counter >= 10) {
-                //reason[4]+=1;
-                counter = 0;
-            } else if (hasUTurn(result) && !(1 == 2)) {
-                //alert('replotting because has uturn');
-                //reason[5]+=1;
-                tolerance *= 1.1; //increase tolerance to ensure eventually will get route
-                counter += 1;
-                findPts(LatLng1);
-                plotRoute();
+            } else {
+                if ((g - e) / g > tolerance) {
+                    tolerance *= 1.1;
+                    findPts(LatLng1);
+                    plotRoute()
+                } else {
+                    if (!(smooth_bool) && !(smooth(d))) {
+                        plotRoute()
+                    } else {
+                        if (counter >= 10) {
+                            counter = 0
+                        } else {
+                            if (hasUTurn(d) && !(1 == 2)) {
+                                tolerance *= 1.1;
+                                counter += 1;
+                                findPts(LatLng1);
+                                plotRoute()
+                            } else {
+                                infoptoggle();
+                                directionsDisplay.setDirections(d);
+                                showMarkers()
+                            }
+                        }
+                    }
+                }
             }
-            //alert('plotting, mode:'+mode);
-            else {
-                //alert('plotting!');
-                //alert(reason);
-                infoptoggle();
-
-                directionsDisplay.setDirections(result);
-                showMarkers();
-                //alert(Object.keys(map));
-            }
-        } else if (status == google.maps.DirectionsStatus.OVER_QUERY_LIMIT) {
-            console.log('Query limit reached, waiting 3 seconds');
-            setTimeout(plotRoute, 3000);
-        } else if (status == google.maps.DirectionsStatus.ZERO_RESULTS) {
-            findPts(LatLng1);
-            plotRoute();
         } else {
-            alert(status);
-            mode = google.maps.TravelMode.WALKING; //assume error was because google doesn't support bike directions
-            plotRoute(); //in requested country
+            if (f == google.maps.DirectionsStatus.OVER_QUERY_LIMIT) {
+                console.log("Query limit reached, waiting 3 seconds");
+                setTimeout(plotRoute, 3000)
+            } else {
+                if (f == google.maps.DirectionsStatus.ZERO_RESULTS) {
+                    findPts(LatLng1);
+                    plotRoute()
+                } else {
+                    alert(f);
+                    mode = google.maps.TravelMode.WALKING;
+                    plotRoute()
+                }
+            }
         }
-    });
+    })
 }
-
 
 function showDirections() {
-    var openWindow = window.open("", "", "width=500, height=600");
-    var steps = directionsDisplay.directions.routes[0].legs[0].steps;
-    var uniqueSteps = [steps[0]]; //initialize to avoid steps[i-1] --> negative index
-    var instructions = [];
-    var header =
-        '<head><link href="' + window.location.href + 'css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="' + window.location.href + 'css/flat-ui.css" rel="stylesheet" type="text/css"><link href="' + window.location.href + 'css/style.css" rel="stylesheet" type="text/css"><title>Directions</title><body>';
-    for (var i = 1; i < steps.length; i++) {
-        if (steps[i] != uniqueSteps[uniqueSteps.length - 1] && steps[i].instructions.split(" ").length > 2 && steps[i].instructions.indexOf('bicycle') == -1) {
-            uniqueSteps.push(steps[i]);
+    var h = window.open("", "", "width=500, height=600");
+    var e = directionsDisplay.directions.routes[0].legs[0].steps;
+    var d = [e[0]];
+    var c = [];
+    var k = '<head><link href="' + window.location.href + 'css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="' + window.location.href + 'css/flat-ui.css" rel="stylesheet" type="text/css"><link href="' + window.location.href + 'css/style.css" rel="stylesheet" type="text/css"><title>Directions</title><body>';
+    for (var f = 1; f < e.length; f++) {
+        if (e[f] != d[d.length - 1] && e[f].instructions.split(" ").length > 2 && e[f].instructions.indexOf("bicycle") == -1) {
+            d.push(e[f])
         } else {
-            uniqueSteps[uniqueSteps.length - 1].distance.value += steps[i].distance.value;
+            d[d.length - 1].distance.value += e[f].distance.value
         }
     }
-    for (var i = 0; i < uniqueSteps.length; i++) {
-        instructions.push(uniqueSteps[i].instructions);
+    for (var f = 0; f < d.length; f++) {
+        c.push(d[f].instructions)
     }
-
-    var routeDist = document.getElementById("routeDistance").innerHTML;
-    var footer = "<br\><br\>Total: " + routeDist + "</body\>";
-    openWindow.document.write(header + instructions.join("<br\>") + footer);
-    openWindow.focus();
+    var g = document.getElementById("routeDistance").innerHTML;
+    var j = "<br><br>Total: " + g + "</body>";
+    h.document.write(k + c.join("<br>") + j);
+    h.focus()
 }
 
-function hasUTurn(result) {
-    var ok = false;
-    var steps = result.routes[0].legs[0].steps;
-    for (var i = 0; i < steps.length; i++) {
-        if (steps[i].instructions.indexOf("U-turn") != -1) {
-            ok = true;
-            break;
+function hasUTurn(c) {
+    var f = false;
+    var d = c.routes[0].legs[0].steps;
+    for (var e = 0; e < d.length; e++) {
+        if (d[e].instructions.indexOf("U-turn") != -1) {
+            f = true;
+            break
         }
     }
-    return ok;
+    return f
 }
 
-function smooth(result) {
-    //alert('smoothing');
-    var steps = result.routes[0].legs[0].steps;
-    var minDist1 = 10; //actually dist^2
-    var minDist2 = 10;
-    var bestStep1;
-    var bestStep2;
-    for (var i = 0; i < steps.length; i++) {
-        var dist1 = Math.pow(LatLng2.lat() - steps[i].end_location.lat(), 2) + Math.pow(LatLng2.lng() - steps[i].end_location.lng(), 2);
-        var dist2 = Math.pow(LatLng3.lat() - steps[i].end_location.lat(), 2) + Math.pow(LatLng3.lng() - steps[i].end_location.lng(), 2);
-        if (dist1 < minDist1) {
-            bestStep1 = i;
-            minDist1 = dist1;
+function smooth(l) {
+    var k = l.routes[0].legs[0].steps;
+    var e = 10;
+    var c = 10;
+    var j;
+    var h;
+    for (var g = 0; g < k.length; g++) {
+        var f = Math.pow(LatLng2.lat() - k[g].end_location.lat(), 2) + Math.pow(LatLng2.lng() - k[g].end_location.lng(), 2);
+        var d = Math.pow(LatLng3.lat() - k[g].end_location.lat(), 2) + Math.pow(LatLng3.lng() - k[g].end_location.lng(), 2);
+        if (f < e) {
+            j = g;
+            e = f
         }
-        if (dist2 < minDist2) {
-            bestStep2 = i;
-            minDist2 = dist2;
+        if (d < c) {
+            h = g;
+            c = d
         }
     }
-    a = 0; //used to check if any smoothing was needed
+    a = 0;
     b = 0;
-    while (steps[bestStep1].distance.value < 200) {
-        bestStep1 -= 1;
-        a += 1;
+    while (k[j].distance.value < 200) {
+        j -= 1;
+        a += 1
     }
-    while (steps[bestStep2].distance.value < 200) {
-        bestStep2 -= 1;
-        b += 1;
+    while (k[h].distance.value < 200) {
+        h -= 1;
+        b += 1
     }
-    //alert('a:b-'+a+':'+b);
-    LatLng2 = steps[bestStep1].end_location;
-    LatLng3 = steps[bestStep2].end_location;
+    LatLng2 = k[j].end_location;
+    LatLng3 = k[h].end_location;
     smooth_bool = true;
     if (a === 0 && b === 0) {
-        return true; //ok to move on
+        return true
     } else {
-        return false; //need to plotRoute again
+        return false
     }
 }
 
 function showMarkers() {
     if (1 == 2) {
-        var steps = directionsDisplay.directions.routes[0].legs[0].steps;
-        var dist = 0; //distance from last mile marker
-        var miles = 0;
-        for (var i = 0; i < steps.length; i++) {
-            dist += steps[i].distance.value;
-            while (dist > 1609344) {
-                dist -= 1609344;
-                miles += 1;
-                var lat = steps[i].start_location.lat() +
-                    dist / 1609344 * (steps[i].end_location.lat() - steps[i].start_location.lat());
-                var lng = steps[i].start_location.lng() +
-                    dist / 1609344 * (steps[i].end_location.lng() - steps[i].start_location.lng());
+        var c = directionsDisplay.directions.routes[0].legs[0].steps;
+        var h = 0;
+        var f = 0;
+        for (var e = 0; e < c.length; e++) {
+            h += c[e].distance.value;
+            while (h > 1609344) {
+                h -= 1609344;
+                f += 1;
+                var g = c[e].start_location.lat() + h / 1609344 * (c[e].end_location.lat() - c[e].start_location.lat());
+                var d = c[e].start_location.lng() + h / 1609344 * (c[e].end_location.lng() - c[e].start_location.lng());
                 markers.push(new google.maps.Marker({
                     map: map,
-                    position: new google.maps.LatLng(lat, lng),
-                    icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=" + (miles + Math.floor(dist / 1609344)) + "|99B2FF"
-                }));
+                    position: new google.maps.LatLng(g, d),
+                    icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=" + (f + Math.floor(h / 1609344)) + "|99B2FF"
+                }))
             }
         }
     } else {
-        clearMarkers();
+        clearMarkers()
     }
 }
 
 function clearMarkers() {
-    for (var i = 0; i < markers.length; i++) {
-        markers[i].setMap(null);
+    for (var c = 0; c < markers.length; c++) {
+        markers[c].setMap(null)
     }
-    markers = [];
-}
+    markers = []
+};

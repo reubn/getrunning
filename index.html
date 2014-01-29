@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!--Uses code from https://github.com/ben-eysenbach/run_map-->
-<!-- <html manifest="cache.appcache"> -->
 <html>
 
 <head>
@@ -29,7 +27,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="vendor/css/jquery-ui-1.10.3.custom.min.css" />
-    <!-- Style -->
     <link href="vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="vendor/css/animate.min.css" rel="stylesheet" type="text/css">
     <link href="vendor/css/flat-ui.css" rel="stylesheet" type="text/css">
@@ -52,7 +49,6 @@
     <meta name="msapplication-square150x150logo" content="/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="/mstile-310x310.png" />
-
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAue8HUBWPfP9K6blbupxpEYHCj98VnWi0&sensor=false"></script>
 </head>
 
@@ -63,32 +59,17 @@
         <input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1>
         <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run">
     </div>
-    <div id="infop" class="centerVertical">
-        <span id="routeDistance"></span>
-        <hr/>
-
-
-<span class="timecont">
-		<span class="time"><span class="glyphicon glyphicon-running" id="chngtd" ></span>&nbsp; <span class="running"></span></span>
-  		
-  		<span class="time"><span class="glyphicon glyphicon-walking" id="chngtd" ></span>&nbsp; <span class="walking"></span></span>
-  		
-  		<span class="time"><span class="glyphicon glyphicon-cycling" id="chngtd" ></span>&nbsp; <span class="cycling"></span></span>
-    </span>
-    
-    
-    <span id="refreshbut" class="btn btn-block btn-lg btn-success" style="
-    margin-top: 10%;
-"><span class="middle-icon glyphicon glyphicon-repeat" style="
-    color: #fff;
-"></span></span>
+    <div id="infop" class="centerVertical"><span id="routeDistance"></span>
+        <hr/><span class="timecont"><span class="time"><span class="glyphicon glyphicon-running" id="chngtd" ></span>&nbsp;<span class="running"></span></span><span class="time"><span class="glyphicon glyphicon-walking" id="chngtd" ></span>&nbsp;<span class="walking"></span></span>
+        <span
+        class="time"><span class="glyphicon glyphicon-cycling" id="chngtd"></span>&nbsp;<span class="cycling"></span></span>
+            </span><span id="refreshbut" class="btn btn-block btn-lg btn-success" style=" margin-top: 10%;"><span class="middle-icon glyphicon glyphicon-repeat" style=" color: #fff;"></span></span>
     </div>
     <div id="ab" class="nsh noop centerHorizontal centerVertical" style="">
         <h1>Hey!</h1>
         <img id="abim" src="">
         <p>Description Here....</p>
-        <div id="social">
-        </div>
+        <div id="social"></div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="vendor/js/bootstrap.min.js"></script>
