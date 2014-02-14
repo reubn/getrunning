@@ -134,19 +134,78 @@ function initialize(h, f, g) {
             document.getElementById("location").value = h + " , " + f;
             document.getElementById("location").placeholder = "Your Current Location!"
         }
-        var d = [{
-            featureType: "landscape",
-            elementType: "geometry",
-            stylers: [{
-                hue: "#f9f5f1"
-            }, {
-                saturation: 18
-            }, {
-                lightness: 64
-            }, {
-                visibility: "on"
-            }]
-        }];
+        var d = [
+            {
+                "elementType": "labels",
+                "stylers": [
+                    {
+                        "visibility": "simplified"
+                    }
+    ]
+  }, {
+                "featureType": "landscape",
+                "elementType": "labels",
+                "stylers": [
+                    {
+                        "visibility": "simplified"
+                    }
+    ]
+  }, {
+                "featureType": "administrative",
+                "elementType": "labels",
+                "stylers": [
+                    {
+                        "visibility": "on"
+                    }
+    ]
+  }, {
+                "featureType": "poi",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+    ]
+  }, {
+                "featureType": "poi.medical",
+                "stylers": [
+                    {
+                        "visibility": "simplified"
+                    }
+    ]
+  }, {
+                "featureType": "poi.park",
+                "stylers": [
+                    {
+                        "visibility": "simplified"
+                    }
+    ]
+  }, {
+                "featureType": "landscape",
+                "stylers": [
+                    {
+                        "hue": "#f5f9f1"
+                    },
+                    {
+                        "saturation": 18
+                    },
+                    {
+                        "lightness": 64
+                    },
+                    {
+                        "visibility": "on"
+                    }
+    ]
+  },
+            {
+                "featureType": "landscape",
+                "elementType": "labels",
+                "stylers": [
+                    {
+                        "visibility": "simplified"
+                    }
+    ]
+  }
+];
         var c = {
             center: new google.maps.LatLng(maplat, maplon),
             zoom: 15,
