@@ -453,7 +453,7 @@ function showDirections() {
     var e = directionsDisplay.directions.routes[0].legs[0].steps;
     var d = [e[0]];
     var c = [];
-    var k = '<head><link href="' + window.location.href + 'css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="' + window.location.href + 'css/flat-ui.css" rel="stylesheet" type="text/css"><link href="' + window.location.href + 'css/style.css" rel="stylesheet" type="text/css"><title>Directions</title><body>';
+    var k = '<head><link href="' + window.location.href + 'css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="' + window.location.href + 'css/flat-ui.css" rel="stylesheet" type="text/css"><link href="' + window.location.href + 'css/style.css" rel="stylesheet" type="text/css"><title>Directions</title><body><a href="javascript:window.close();">Close</a><hr>';
     for (var f = 1; f < e.length; f++) {
         if (e[f] != d[d.length - 1] && e[f].instructions.split(" ").length > 2 && e[f].instructions.indexOf("bicycle") == -1) {
             d.push(e[f])
