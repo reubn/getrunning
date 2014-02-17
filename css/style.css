@@ -1,7 +1,13 @@
 * {
     font-family: 'Open Sans' !important;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-    }
+    text-decoration: none;
+}
+
+a{
+color:#fff!important;
+text-decoration: none!important;
+}
 
 *:focus {
     outline: 0;
@@ -85,7 +91,25 @@ body {
 #infop>span,.timecont>span {
     display: block;
 }
-
+#directions{
+display:inline;
+width: 80%;
+height: 80%;
+z-index: 1000;
+background-color: #FFF;
+margin-left: -806px;
+margin-top: -423.5px;
+position: absolute;
+left: 50%;
+top: 50%;
+-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+-webkit-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;
+padding: 2%;
+font-size: 2em;
+overflow: overlay;
+}
 .ui-autocomplete {
     width: 198px !important;
     margin-top: -7px !important;

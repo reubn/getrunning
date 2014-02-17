@@ -1,6 +1,10 @@
 var overop;
+var directionClick = 0;
 $("#routeDistance").click(function () {
-    showDirections()
+    if(directionClick % 2 == 0){
+    showDirections()} else if(directionClick % 2 != 0){
+    hideDirections();}
+    directionClick++;
 });
 $("#subit").click(function () {
     submit()
@@ -269,7 +273,9 @@ function initialize(h, f, g) {
 
 function refreshdir() {
     submit();
-    $("#infop").toggleClass("infout")
+    $("#infop").toggleClass("infout");
+    $("#directions").addClass("nsh");
+    directionClick++;
 }
 
 function submit() {
@@ -449,11 +455,15 @@ function plotRoute() {
 }
 
 function showDirections() {
-    var h = window.open("", "", "width=500, height=600");
+    $('#routeDistance').html('<span style="background-color:#ff6540;!important" class="btn btn-block btn-lg btn-danger">Close</span>');
+    $("#directions").html("");
+    $("#directions").removeClass("nsh");
+    Midway();
     var e = directionsDisplay.directions.routes[0].legs[0].steps;
     var d = [e[0]];
     var c = [];
-    var k = '<head><link href="' + window.location.href + 'css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="' + window.location.href + 'css/flat-ui.css" rel="stylesheet" type="text/css"><link href="' + window.location.href + 'css/style.css" rel="stylesheet" type="text/css"><title>Directions</title><body><a href="javascript:window.close();">Close</a><hr>';
+    var k = '';
+    var j = "<br><span style='background-color:#4db7ff;color:#fff;' class='btn btn-block btn-lg btn-info'><a href='" + kmlLink + "' download='GetRunningRoute.kml'>Download KML</a></span>";
     for (var f = 1; f < e.length; f++) {
         if (e[f] != d[d.length - 1] && e[f].instructions.split(" ").length > 2 && e[f].instructions.indexOf("bicycle") == -1) {
             d.push(e[f])
@@ -464,10 +474,12 @@ function showDirections() {
     for (var f = 0; f < d.length; f++) {
         c.push(d[f].instructions)
     }
-    var g = document.getElementById("routeDistance").innerHTML;
-    var j = "<hr><a href='" + kmlLink + "' download='GetRunningRoute.kml'>Download KML</a></body>";
-    h.document.write(k + c.join("<br>") + j);
-    h.focus()
+    $("#directions").html(k + c.join("<br>") + j);
+}
+
+function hideDirections(){
+$("#directions").addClass("nsh"); 
+$('#routeDistance').html(routeDist);
 }
 
 function hasUTurn(c) {
