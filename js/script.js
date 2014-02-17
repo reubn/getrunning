@@ -102,6 +102,11 @@ var routeTimeR;
 var routeTimeC;
 var routeDist;
 var routecoords;
+var kmlWhole;
+var kmlFirst = '<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>GetRunning Route</name><description>GetRunning Route</description><Style id="routeStyle"><LineStyle><color>ff0000ff</color><width>2</width></LineStyle></Style><Placemark><name>GetRunning Route</name><description>GetRunning Route</description><styleUrl>#routeStyle</styleUrl><LineString><coordinates>';
+var kmlData;
+var kmlLast = '</coordinates></LineString></Placemark></Document></kml>';
+var kmlLink;
 var dista;
 var dist;
 var map;
@@ -243,6 +248,16 @@ function initialize(h, f, g) {
             $(".running").text(routeTimeR);
             $(".walking").text(routeTimeW);
             $(".cycling").text(routeTimeC);
+            for (i = 0; i < routecoords.length; i++) {
+                
+                point = "" + routecoords[i] + "";
+                swap = point.split(",");
+                swapped = swap[1] + "," + swap[0];
+                kmlData = kmlData + swapped + '\n';
+            }
+            kmlData = kmlData.replace("undefined","").split("(").join("").split(")").join("").split(" ").join("");;
+            kmlWhole = kmlFirst + kmlData + kmlLast;
+            kmlLink = "data:application/octet-stream," + encodeURIComponent(kmlWhole);
             if (i > j) {} else {
                 if (i < j) {} else {
                     if (i == j) {}
@@ -450,7 +465,7 @@ function showDirections() {
         c.push(d[f].instructions)
     }
     var g = document.getElementById("routeDistance").innerHTML;
-    var j = "<br><br>Total: " + g + "</body>";
+    var j = "<hr><a href='" + kmlLink + "' download='GetRunningRoute.kml'>Download KML</a></body>";
     h.document.write(k + c.join("<br>") + j);
     h.focus()
 }
