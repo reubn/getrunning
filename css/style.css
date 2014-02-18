@@ -73,42 +73,42 @@ body {
     -webkit-transition: all .5s ease-in-out;
 }
 .btn-close {
-    color: #ffffff;
-    background-color: #FF6540;
+    color: #ffffff!important;
+    background-color: #FF6540!important;
 }
 .btn-close:hover,
 .btn-close:focus,
 .btn-close:active,
 .btn-close.active,
 .open .dropdown-toggle.btn-close {
-    color: #ffffff;
-    background-color: #ff7655;
-    border-color: #ff7655;
+    color: #ffffff!important;
+    background-color: #ff7655!important;
+    border-color: #ff7655!important;
 }
 .btn-close:active,
 .btn-close.active,
 .open .dropdown-toggle.btn-close {
-    background: #ff5340;
-    border-color: #ff5340;
+    background: #ff5340!important;
+    border-color: #ff5340!important;
 }
 .btn-download {
-    color: #ffffff;
-    background-color: #4DB7FF;
+    color: #ffffff!important;
+    background-color: #4DB7FF!important;
 }
 .btn-download:hover,
 .btn-download:focus,
 .btn-download:active,
 .btn-download.active,
 .open .dropdown-toggle.btn-download {
-    color: #ffffff;
-    background-color: #67c1ff;
-    border-color: #67c1ff;
+    color: #ffffff!important;
+    background-color: #67c1ff!important;
+    border-color: #67c1ff!important;
 }
 .btn-download:active,
 .btn-download.active,
 .open .dropdown-toggle.btn-download {
-    background: #27a8ff;
-    border-color: #27a8ff;
+    background: #27a8ff!important;
+    border-color: #27a8ff!important;
 }
 .infout {
     display: block;
