@@ -1,9 +1,11 @@
 var overop;
 var directionClick = 0;
 $("#routeDistance").click(function () {
-    if(directionClick % 2 == 0){
-    showDirections()} else if(directionClick % 2 != 0){
-    hideDirections();}
+    if (directionClick % 2 == 0) {
+        showDirections()
+    } else if (directionClick % 2 != 0) {
+        hideDirections();
+    }
     directionClick++;
 });
 $("#subit").click(function () {
@@ -27,40 +29,6 @@ function overtoggle() {
         })
     }, 600)
 }
-$(function () {
-    $("#location").autocomplete({
-        open: function () {
-            $("#location").css("border-bottom-left-radius", "0px");
-            $("#location").css("border-bottom-right-radius", "0px")
-        },
-        close: function () {
-            $("#location").css("border-bottom-left-radius", "6px");
-            $("#location").css("border-bottom-right-radius", "6px")
-        },
-        source: function (d, c) {
-            $.ajax({
-                url: "http://ws.geonames.org/searchJSON",
-                dataType: "jsonp",
-                search: function () {},
-                data: {
-                    maxRows: 3,
-                    name_startsWith: d.term,
-                    isNameRequired: true,
-                    countryBias: "UK",
-                    featureClass: "P"
-                },
-                success: function (e) {
-                    c($.map(e.geonames, function (f) {
-                        return {
-                            label: f.name + (f.adminName1 ? ", " + f.adminName1 : ""),
-                            value: f.name + (f.adminName1 ? ", " + f.adminName1 : "")
-                        }
-                    }))
-                }
-            })
-        }
-    })
-});
 var pastpr;
 pastpr = 0;
 var maplat;
@@ -227,13 +195,9 @@ function initialize(h, f, g) {
             streetViewControl: false,
             overviewMapControl: false
         };
-        var e = new google.maps.Polyline({
-            strokeColor: "rgba(142, 68, 173, 0.65)",
-            strokeOpacity: 0.65,
-            strokeWeight: 6
-        });
         directionsDisplay = new google.maps.DirectionsRenderer({
-            draggable: false
+            draggable: false,
+            suppressMarkers: false
         });
         map = new google.maps.Map(document.getElementById("googleMap"), c);
         directionsDisplay.setMap(map);
@@ -253,13 +217,13 @@ function initialize(h, f, g) {
             $(".walking").text(routeTimeW);
             $(".cycling").text(routeTimeC);
             for (i = 0; i < routecoords.length; i++) {
-                
+
                 point = "" + routecoords[i] + "";
                 swap = point.split(",");
                 swapped = swap[1] + "," + swap[0];
                 kmlData = kmlData + swapped + '\n';
             }
-            kmlData = kmlData.replace("undefined","").split("(").join("").split(")").join("").split(" ").join("");;
+            kmlData = kmlData.replace("undefined", "").split("(").join("").split(")").join("").split(" ").join("");;
             kmlWhole = kmlFirst + kmlData + kmlLast;
             kmlLink = "data:application/octet-stream," + encodeURIComponent(kmlWhole);
             if (i > j) {} else {
@@ -282,7 +246,6 @@ function submit() {
     overop = 1;
     pastpr = 1;
     var c = document.getElementById("location").value;
-    clearMarkers();
     counter = 0;
     tolerance = 0.15;
     mode = google.maps.TravelMode.WALKING;
@@ -477,9 +440,9 @@ function showDirections() {
     $("#directions").html(k + c.join("<br>") + j);
 }
 
-function hideDirections(){
-$("#directions").addClass("nsh"); 
-$('#routeDistance').html(routeDist);
+function hideDirections() {
+    $("#directions").addClass("nsh");
+    $('#routeDistance').html(routeDist);
 }
 
 function hasUTurn(c) {
@@ -531,34 +494,3 @@ function smooth(l) {
         return false
     }
 }
-
-function showMarkers() {
-    if (1 == 2) {
-        var c = directionsDisplay.directions.routes[0].legs[0].steps;
-        var h = 0;
-        var f = 0;
-        for (var e = 0; e < c.length; e++) {
-            h += c[e].distance.value;
-            while (h > 1609344) {
-                h -= 1609344;
-                f += 1;
-                var g = c[e].start_location.lat() + h / 1609344 * (c[e].end_location.lat() - c[e].start_location.lat());
-                var d = c[e].start_location.lng() + h / 1609344 * (c[e].end_location.lng() - c[e].start_location.lng());
-                markers.push(new google.maps.Marker({
-                    map: map,
-                    position: new google.maps.LatLng(g, d),
-                    icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=" + (f + Math.floor(h / 1609344)) + "|99B2FF"
-                }))
-            }
-        }
-    } else {
-        clearMarkers()
-    }
-}
-
-function clearMarkers() {
-    for (var c = 0; c < markers.length; c++) {
-        markers[c].setMap(null)
-    }
-    markers = []
-};
