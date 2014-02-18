@@ -1,49 +1,43 @@
 * {
     font-family: 'Open Sans' !important;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     text-decoration: none;
 }
-
-a{
-color:#fff!important;
-text-decoration: none!important;
+a {
+    color: #fff!important;
+    text-decoration: none!important;
 }
-
 *:focus {
     outline: 0;
 }
-*:not(.glyphicon, #googleMap > *), #googleMap{
--webkit-backface-visibility: hidden;
+*:not(.glyphicon,
+#googleMap > *),
+#googleMap {
+    -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
 }
 input {
     text-transform: capitalize;
 }
-
 #distance {
     margin-left: 5px;
 }
-
 #routeDistance {
     -webkit-transition: all .5s;
     transition: all .5s;
 }
-
 #routeDistance:hover {
     color: #5dade2;
     cursor: pointer;
 }
-
 html {
     height: 100%;
 }
-
 body {
     height: 100%;
     margin: 0;
     overflow-y: hidden;
 }
-
 #googleMap {
     float: right;
     width: 100%;
@@ -51,15 +45,12 @@ body {
     -webkit-filter: blur(5px);
     filter: blur(5px);
 }
-
 .nsh {
     display: none !important;
 }
-
 .noop {
     opacity: 0 !important;
 }
-
 #over {
     position: absolute;
     z-index: 99;
@@ -67,7 +58,6 @@ body {
     opacity: 1;
     -webkit-transition: opacity .5s !important;
 }
-
 #infop {
     position: absolute;
     left: -1000px;
@@ -78,37 +68,74 @@ body {
     text-align: left;
     background-color: #fefefe;
     opacity: 0;
-    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     -webkit-transition: all .5s ease-in-out;
 }
-
+.btn-close {
+    color: #ffffff;
+    background-color: #FF6540;
+}
+.btn-close:hover,
+.btn-close:focus,
+.btn-close:active,
+.btn-close.active,
+.open .dropdown-toggle.btn-close {
+    color: #ffffff;
+    background-color: #ff7655;
+    border-color: #ff7655;
+}
+.btn-close:active,
+.btn-close.active,
+.open .dropdown-toggle.btn-close {
+    background: #ff5340;
+    border-color: #ff5340;
+}
+.btn-download {
+    color: #ffffff;
+    background-color: #4DB7FF;
+}
+.btn-download:hover,
+.btn-download:focus,
+.btn-download:active,
+.btn-download.active,
+.open .dropdown-toggle.btn-download {
+    color: #ffffff;
+    background-color: #67c1ff;
+    border-color: #67c1ff;
+}
+.btn-download:active,
+.btn-download.active,
+.open .dropdown-toggle.btn-download {
+    background: #27a8ff;
+    border-color: #27a8ff;
+}
 .infout {
     display: block;
     opacity: 1!important;
 }
-
-#infop>span,.timecont>span {
+#infop>span,
+.timecont>span {
     display: block;
 }
-#directions{
-display:inline;
-width: 80%;
-height: 80%;
-z-index: 1000;
-background-color: #FFF;
-margin-left: -806px;
-margin-top: -423.5px;
-position: absolute;
-left: 50%;
-top: 50%;
--webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
--webkit-transition: all 0.5s ease-in-out;
-transition: all 0.5s ease-in-out;
-padding: 2%;
-font-size: 2em;
-overflow: overlay;
+#directions {
+    display: inline;
+    width: 80%;
+    height: 80%;
+    z-index: 1000;
+    background-color: #FFF;
+    margin-left: -806px;
+    margin-top: -423.5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    padding: 2%;
+    font-size: 2em;
+    overflow: overlay;
 }
 .ui-autocomplete {
     width: 198px !important;
@@ -121,50 +148,43 @@ overflow: overlay;
     -webkit-transition: 0 !important;
     transition: 0 !important;
 }
-
 .btn.btn-whist {
     background-color: #ff2a68;
     -webkit-transition: all 3s !important;
     transition: all 3s !important;
 }
-
-.btn.btn-whist:hover,.btn.btn-whist:focus,.btn-group:focus .btn.btn-whist.dropdown-toggle {
+.btn.btn-whist:hover,
+.btn.btn-whist:focus,
+.btn-group:focus .btn.btn-whist.dropdown-toggle {
     background-color: #e3255d;
 }
-
 .btn-whist.active {
     background-color: #e3255d;
     -webkit-transition: all 0 !important;
     transition: all 0 !important;
 }
-
 .overval:focus {
     border-color: #ff2a68 !important;
 }
-
 .overval.active {
     border-color: #ff2a68 !important;
     -webkit-transition: all 0 !important;
     transition: all 0 !important;
 }
-
 .noval {
     border-color: #ff6543 !important;
     -webkit-transition: border-color 1.5s !important;
     transition: border-color 1.5s !important;
 }
-
 .gdval {
     border-color: #0bd318 !important;
     -webkit-transition: border-color 1.5s !important;
     transition: border-color 1.5s !important;
 }
-
 #over {
     -webkit-animation: poopin .6s;
     animation: poopin .6s;
 }
-
 @-webkit-keyframes poopin {
     50% {
         opacity: 0;
@@ -172,7 +192,6 @@ overflow: overlay;
         -ms-transform: scale(0) translateZ(0);
         transform: scale(0) translateZ(0);
     }
-
     to {
         opacity: 1;
         -webkit-transform: scale(1) translateZ(0);
@@ -180,7 +199,6 @@ overflow: overlay;
         transform: scale(1) translateZ(0);
     }
 }
-
 @keyframes poopin {
     50% {
         opacity: 0;
@@ -188,7 +206,6 @@ overflow: overlay;
         -ms-transform: scale(0) translateZ(0);
         transform: scale(0) translateZ(0);
     }
-
     to {
         opacity: 1;
         -webkit-transform: scale(1) translateZ(0);
@@ -196,7 +213,6 @@ overflow: overlay;
         transform: scale(1) translateZ(0);
     }
 }
-
 @-webkit-keyframes poopout {
     from {
         opacity: 1;
@@ -204,7 +220,6 @@ overflow: overlay;
         -ms-transform: scale(1) translateZ(0);
         transform: scale(1) translateZ(0);
     }
-
     100% {
         opacity: 0 !important;
         -webkit-transform: scale(0) translateZ(0);
@@ -212,7 +227,6 @@ overflow: overlay;
         transform: scale(0) translateZ(0);
     }
 }
-
 @keyframes poopout {
     from {
         opacity: 1;
@@ -220,7 +234,6 @@ overflow: overlay;
         -ms-transform: scale(1) translateZ(0);
         transform: scale(1) translateZ(0);
     }
-
     100% {
         opacity: 0 !important;
         -webkit-transform: scale(0) translateZ(0);
@@ -228,22 +241,22 @@ overflow: overlay;
         transform: scale(0) translateZ(0);
     }
 }
-
 .hide {
     -webkit-animation-duration: .5s !important;
     animation-duration: .5s !important;
     -webkit-animation-name: poopout !important;
     animation-name: poopout !important;
-    -webkit-animation-timing-function: cubic-bezier(0.6,-0.28,0.735,0.045) !important;
-    animation-timing-function: cubic-bezier(0.6,-0.28,0.735,0.045) !important;
+    -webkit-animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important;
+    animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045) !important;
     -webkit-animation-fill-mode: forwards !important;
     animation-fill-mode: forwards !important;
 }
-
 @font-face {
-    font-family:'Glyphicons Halflings';src:url('../fonts/glyphicons-halflings-min.svg') format('svg'),url('../fonts/glyphicons-halflings-min.woff?32739445') format('woff');font-weight:normal;font-style:normal;
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-min.svg') format('svg'), url('../fonts/glyphicons-halflings-min.woff?32739445') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
-
 .glyphicon {
     position: relative;
     position: sticky;
@@ -256,65 +269,52 @@ overflow: overlay;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 .glyphicon {
     color: #3a4558;
 }
-
 .glyphicon-repeat:before {
     content: "\e030";
 }
-
 .glyphicon-running:before {
     content: "\e601";
 }
-
 .glyphicon-walking:before {
     content: "\e602";
 }
-
 .glyphicon-cycling:before {
     content: "\e600";
 }
-
-@media only screen and (max-width:480px) {
+@media only screen and (max-width: 480px) {
     *:not(#infop) {
         transition: none !important;
         animation: none !important;
     }
-
     #over {
         width: 65%;
     }
-
-    .km,.timecont {
+    .km,
+    .timecont {
         display: none !important;
     }
-
     .overval {
         width: 94% !important;
     }
-
     #subit {
         margin-top: 3%;
         width: 102% !important;
     }
-
     #distance {
         margin-left: 0;
     }
 }
-
-@media only screen and (min-device-width:320px) and (max-device-width:480px) and (orientation:landscape) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
     *:not(#infop) {
         transition: none !important;
         animation: none !important;
     }
-
     .overval {
         width: 96% !important;
     }
-
     #distance {
         margin-left: 0;
     }

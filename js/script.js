@@ -418,7 +418,7 @@ function plotRoute() {
 }
 
 function showDirections() {
-    $('#routeDistance').html('<span style="background-color:#ff6540;!important" class="btn btn-block btn-lg btn-danger">Close</span>');
+    $('#routeDistance').html('<span class="btn btn-block btn-lg btn-close">Close</span>');
     $("#directions").html("");
     $("#directions").removeClass("nsh");
     Midway();
@@ -426,7 +426,7 @@ function showDirections() {
     var d = [e[0]];
     var c = [];
     var k = '';
-    var j = "<br><span style='background-color:#4db7ff;color:#fff;' class='btn btn-block btn-lg btn-info'><a href='" + kmlLink + "' download='GetRunningRoute.kml'>Download KML</a></span>";
+    var j = "<br><span class='btn btn-block btn-lg btn-download'><a href='" + kmlLink + "' download='GetRunningRoute.kml'>Download KML</a></span>";
     for (var f = 1; f < e.length; f++) {
         if (e[f] != d[d.length - 1] && e[f].instructions.split(" ").length > 2 && e[f].instructions.indexOf("bicycle") == -1) {
             d.push(e[f])
