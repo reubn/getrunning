@@ -17,10 +17,10 @@ $("#refreshbut").click(function () {
 
 function overtoggle() {
     $("#googleMap").css({
-        "-webkit-filter": "blur(0)"
+        "-webkit-filter": "none"
     });
     $("#googleMap").css({
-        filter: "blur()"
+        filter: "none"
     });
     $("#over").addClass("hide");
     setTimeout(function () {

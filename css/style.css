@@ -292,7 +292,6 @@ body {
     #over {
         width: 65%;
     }
-    .km,
     .timecont {
         display: none !important;
     }
@@ -306,6 +305,30 @@ body {
     #distance {
         margin-left: 0;
     }
+    /* #infop {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        text-align: center;
+        width: 103%!important;
+        height: auto;
+        padding: 0;
+        margin:0;
+    }
+    #infop > hr {
+        margin: 4%;
+    }
+    #infop > #refreshbut {
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5%;
+    }
+    #infop > .btn-close {
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+    } */
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
     *:not(#infop) {
