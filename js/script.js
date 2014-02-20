@@ -393,7 +393,6 @@ function plotRoute() {
                             } else {
                                 infoptoggle();
                                 directionsDisplay.setDirections(d);
-                                showMarkers()
                             }
                         }
                     }
@@ -421,13 +420,11 @@ function showDirections() {
     $('#routeDistance').html('<span class="btn btn-block btn-lg btn-close">Close</span>');
     $("#directions").html("");
     $("#directions").removeClass("nsh");
-    Midway();
     var e = directionsDisplay.directions.routes[0].legs[0].steps;
     var d = [e[0]];
     var c = [];
-    var k = '';
     var j = "<br><span class='btn btn-block btn-lg btn-download'><a href='" + kmlLink + "' download='GetRunningRoute.kml'>Download KML</a></span>";
-    for (var f = 1; f < e.length; f++) {
+    for (var f = 0; f < e.length; f++) {
         if (e[f] != d[d.length - 1] && e[f].instructions.split(" ").length > 2 && e[f].instructions.indexOf("bicycle") == -1) {
             d.push(e[f])
         } else {
@@ -435,15 +432,37 @@ function showDirections() {
         }
     }
     for (var f = 0; f < d.length; f++) {
-        c.push(d[f].instructions)
+        c.push("<span class='step' data-latlon = '" + d[f].start_location + "'>" + d[f].instructions + "</span>")
     }
-    $("#directions").html(k + c.join("<br>") + j);
+    $("#directions").html(c.join("<br>") + j);
+    Midway();
+    $('.step').click(function () {
+        var latLonPre = $(this).data("latlon");
+        console.log($(this).data("latlon"));
+        var latlon = latLonPre.replace("(", "").replace(")", "").split(", ");
+        var gLatLon = new google.maps.LatLng(latlon[0], latlon[1])
+        map.setCenter(gLatLon);
+        var marker = new google.maps.Marker({
+            title: $(this).text(),
+            position: gLatLon,
+            icon: 'http://mt.google.com/vt/icon?psize=30&font=fonts/arialuni_t.ttf&color=ff304C13&name=icons/spotlight/spotlight-waypoint-a.png&ax=43&ay=48&text=%E2%80%A2',
+            animation: google.maps.Animation.DROP,
+            draggable: false
+        });
+        hideDirections();
+        marker.setMap(map);
+        setTimeout(function () {
+            marker.setMap(null);
+            showDirections()
+        }, 3000)
+    });
 }
 
 function hideDirections() {
     $("#directions").addClass("nsh");
     $('#routeDistance').html(routeDist);
 }
+
 
 function hasUTurn(c) {
     var f = false;

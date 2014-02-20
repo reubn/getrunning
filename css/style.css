@@ -53,6 +53,8 @@ body {
 }
 #over {
     position: absolute;
+    left: 50%;
+    top: 50%;
     z-index: 99;
     text-align: center;
     opacity: 1;
@@ -120,7 +122,7 @@ body {
 }
 #directions {
     display: inline;
-    width: 80%;
+    width: auto;
     height: 80%;
     z-index: 1000;
     background-color: #FFF;
@@ -137,17 +139,16 @@ body {
     font-size: 2em;
     overflow: overlay;
 }
-.ui-autocomplete {
-    width: 198px !important;
-    margin-top: -7px !important;
-    border-color: #ff2a68 !important;
-    border-top-style: hidden !important;
-    border-width: 2px !important;
-    border-top-right-radius: 0 !important;
-    border-top-left-radius: 0 !important;
-    -webkit-transition: 0 !important;
-    transition: 0 !important;
+
+.step {
+    -webkit-transition: all .5s;
+    transition: all .5s;
 }
+.step:hover {
+    color: #5dade2;
+    cursor: pointer;
+}
+
 .btn.btn-whist {
     background-color: #ff2a68;
     -webkit-transition: all 3s !important;
@@ -304,6 +305,9 @@ body {
     }
     #distance {
         margin-left: 0;
+    }
+    #directions{
+    width: 80%;
     }
     /* #infop {
         position: absolute;
