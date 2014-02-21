@@ -83,6 +83,13 @@ var dista;
 var dist;
 var map;
 var directionsDisplay;
+var directionsMarker;
+var directionChange = 0;
+var directionIcon = {
+    url: 'http://mt.google.com/vt/icon/name=icons/spotlight/ad_tier1_L_8x.png&scale=1',
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(5, 10)
+};
 var directionsService = new google.maps.DirectionsService();
 var tolerance;
 var counter = 0;
@@ -197,7 +204,7 @@ function initialize(h, f, g) {
         };
         directionsDisplay = new google.maps.DirectionsRenderer({
             draggable: false,
-            suppressMarkers: false
+            suppressMarkers: true
         });
         map = new google.maps.Map(document.getElementById("googleMap"), c);
         directionsDisplay.setMap(map);
@@ -205,6 +212,16 @@ function initialize(h, f, g) {
             styles: d
         });
         google.maps.event.addListener(directionsDisplay, "directions_changed", function () {
+            if (directionChange >= 1) {
+                directionsMarker.setMap(null);
+            }
+            directionChange++;
+            directionsMarker = new google.maps.Marker({
+                position: directionsDisplay.directions.routes[0].legs[0].start_location,
+                map: map,
+                icon: directionIcon,
+                title: '',
+            });
             routeDist = Math.round(directionsDisplay.directions.routes[0].legs[0].distance.value / 100) / 10 + " <span class='km'>km</span>";
             routecoords = directionsDisplay.directions.routes[0].overview_path;
             var j = document.getElementById("distance").value;
