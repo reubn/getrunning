@@ -86,7 +86,7 @@ var directionsDisplay;
 var directionsMarker;
 var directionChange = 0;
 var directionIcon = {
-    url: 'http://mt.google.com/vt/icon/name=icons/spotlight/ad_tier1_L_8x.png&scale=1',
+    url: 'http://mt.google.com/vt/icon/name=icons/spotlight/generic_transit_L_8x.png&scale=1',
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(5, 10)
 };
