@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-	<head>
+
+<head>
     <link rel="dns-prefetch" href="//reubn.tk">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//ajax.googleapis.com">
@@ -29,28 +30,26 @@
     <link href="vendor/css/animate.min.css" rel="stylesheet" type="text/css">
     <link href="vendor/css/flat-ui.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160" />
-    <meta name="msapplication-TileColor" content="#fefefe" />
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
-    <meta name="msapplication-square70x70logo" content="/mstile-70x70.png" />
-    <meta name="msapplication-square150x150logo" content="/mstile-150x150.png" />
-    <meta name="msapplication-wide310x150logo" content="/mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="/mstile-310x310.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#ff36a8">
+    <meta name="msapplication-TileImage" content="mstile-144x144.png">
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAvOyO01BLZcBVQVia6EcqmBSj_juO-fiU&sensor=false"></script>
-    
+
 </head>
 <span style="display:none">GRUNT REPLACE GA</span>
+
 <body>
     <div class="anim" id="googleMap" style=""></div>
     <div id="over" class="centerHorizontal centerVertical">
@@ -58,11 +57,26 @@
         <input id="distance" class="overval" placeholder="Distance (km)" type="number" min=1>
         <input type="button" id="subit" class="btn-large btn-block btn-whist btn" value="Run">
     </div>
-    <div id="infop" class="centerVertical"><span id="routeDistance"></span>
-        <hr/><span class="timecont"><span class="time"><span class="glyphicon glyphicon-running" id="chngtd" ></span>&nbsp;<span class="running"></span></span><span class="time"><span class="glyphicon glyphicon-walking" id="chngtd" ></span>&nbsp;<span class="walking"></span></span>
-        <span
-        class="time"><span class="glyphicon glyphicon-cycling" id="chngtd"></span>&nbsp;<span class="cycling"></span></span>
-            </span><span id="refreshbut" class="btn btn-block btn-lg btn-success" style=" margin-top: 10%;"><span class="middle-icon glyphicon glyphicon-repeat" style=" color: #fff;"></span></span>
+    <div id="infop" class="centerVertical">
+        <span id="routeDistance"></span>
+        <hr/>
+        <span class="timecont">
+            <span class="time">
+                <span class="glyphicon glyphicon-running" id="chngtd"></span>&nbsp;
+                <span class="running"></span>
+            </span>
+            <span class="time">
+                <span class="glyphicon glyphicon-walking" id="chngtd"></span>&nbsp;
+                <span class="walking"></span>
+            </span>
+            <span class="time">
+                <span class="glyphicon glyphicon-cycling" id="chngtd"></span>&nbsp;
+                <span class="cycling"></span>
+            </span>
+        </span>
+        <span id="refreshbut" class="btn btn-block btn-lg btn-success" style=" margin-top: 10%;">
+            <span class="middle-icon glyphicon glyphicon-repeat" style=" color: #fff;"></span>
+        </span>
     </div>
     <div id="directions" class="centerHorizontal centerVertical nsh"></div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
