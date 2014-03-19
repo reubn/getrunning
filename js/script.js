@@ -220,7 +220,7 @@ function initialize(h, f, g) {
                 position: directionsDisplay.directions.routes[0].legs[0].start_location,
                 map: map,
                 icon: directionIcon,
-                title: '',
+                title: ''
             });
             routeDist = Math.round(directionsDisplay.directions.routes[0].legs[0].distance.value / 100) / 10 + " <span class='km'>km</span>";
             routecoords = directionsDisplay.directions.routes[0].overview_path;
